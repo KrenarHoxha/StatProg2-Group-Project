@@ -22,7 +22,7 @@
 |--------------------|-----------------|
 |Krenar Hoxha        |KrenarHoxha      |
 |Thomas Killinger    |                 |
-|Victoria Jodl       |                 |
+|Victoria Jodl       |vmj1611                 |
 |Daniel Kling        |idxny            |
 ## Repository Structure
 
