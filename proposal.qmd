@@ -1,13 +1,10 @@
 ---
-
 title: "Project Proposal"
 author:
-
-* "Krenar Hoxha"
-* "Group Member 2"
-* "Group Member 3"
-  date: 08.06.2026
-
+  - "Krenar Hoxha"
+  - "Group Member 2"
+  - "Group Member 3"
+date: "2026-06-08"
 ---
 
 ## Dataset
