@@ -1,33 +1,221 @@
 ---
+
 title: "Project Proposal"
 author:
-  - "Group Member 1"
-  - "Group Member 2"
-  - "Group Member 3"
-date: today
+
+* "Krenar Hoxha"
+* "Group Member 2"
+* "Group Member 3"
+  date: 08.06.2026
+
 ---
 
 ## Dataset
 
-<!-- Describe the dataset: source, licence, dimensions, key variables. -->
+We use the **Global Jobs Indicators Database** from the World Bank. The dataset contains labour market indicators for different countries, income groups, subsamples, and survey years.
+
+Our project focuses on **Female Labor Force Participation**, especially how it differs across countries, income levels, urban/rural residence, and over time.
+
+Key variables for our initial analysis are:
+
+* Female Labor Force Participation Rate, aged 15–64
+* Income Level Name
+* Region Code
+* Subsample
+* Year of survey
+* Unemployment Rate, aged 15–64
+* Female in non-agricultural employment, aged 15–64
+* Average weekly working hours
 
 ## Research Questions
 
-1.
-2.
+1. **How does female labor force participation vary across countries, income groups, urban/rural populations, and over time?**
+
+2. **Which socioeconomic and labour market factors are associated with female labor force participation?**
+
+3. **Can female labor force participation be predicted using socioeconomic and labour market indicators?**
 
 ## Initial EDA
 
 ```{r}
-#| label: load-data
+#| label: load-packages
+
 library(tidyverse)
 library(here)
-
-# data <- read_csv(here("data", "raw", "data.csv"))
+library(readxl)
 ```
 
-<!-- Add 2–3 exploratory plots and a brief commentary on what you observe. -->
+```{r}
+#| label: load-data
+
+jobs_raw <- read_excel(
+  here("data", "raw", "join_database_w_definitions.xlsx"),
+  skip = 3
+)
+
+glimpse(jobs_raw)
+```
+
+We first inspect the structure of the dataset to understand the number of variables, the available observations, and the relevant labour market indicators.
+
+```{r}
+#| label: select-variables
+
+jobs <- jobs_raw %>%
+  select(
+    country = `Country Name`,
+    region = `Region Code`,
+    income_level = `Income Level Name`,
+    subsample = `Subsample`,
+    year = `Year of survey`,
+    flfp = `Female Labor Force Participation Rate, aged 15-64`,
+    unemployment = `Unemployment Rate, aged 15-64`,
+    female_non_agri = `Female in non-agricultural employment, aged 15-64`,
+    avg_weekly_hours = `Average weekly working hours`
+  )
+```
+
+```{r}
+#| label: data-overview
+
+jobs %>%
+  summarise(
+    observations = n(),
+    countries = n_distinct(country),
+    income_groups = n_distinct(income_level),
+    first_year = min(year, na.rm = TRUE),
+    last_year = max(year, na.rm = TRUE)
+  )
+```
+
+```{r}
+#| label: missing-values
+
+jobs %>%
+  summarise(across(
+    everything(),
+    ~ sum(is.na(.))
+  )) %>%
+  pivot_longer(
+    cols = everything(),
+    names_to = "variable",
+    values_to = "missing_values"
+  )
+```
+
+```{r}
+#| label: flfp-summary
+
+jobs %>%
+  summarise(
+    mean_flfp = mean(flfp, na.rm = TRUE),
+    median_flfp = median(flfp, na.rm = TRUE),
+    min_flfp = min(flfp, na.rm = TRUE),
+    max_flfp = max(flfp, na.rm = TRUE)
+  )
+```
+
+The summary statistics give us a first impression of the overall distribution of female labor force participation in the dataset.
+
+```{r}
+#| label: plot-flfp-distribution
+
+ggplot(jobs, aes(x = flfp)) +
+  geom_histogram(bins = 30) +
+  labs(
+    title = "Distribution of Female Labor Force Participation",
+    x = "Female Labor Force Participation Rate",
+    y = "Number of observations"
+  ) +
+  theme_minimal()
+```
+
+This histogram shows how female labor force participation is distributed across all available observations. It helps us identify whether most observations are concentrated around low, medium, or high participation rates.
+
+```{r}
+#| label: plot-flfp-income-group
+
+ggplot(jobs, aes(x = income_level, y = flfp)) +
+  geom_boxplot() +
+  labs(
+    title = "Female Labor Force Participation by Income Group",
+    x = "Income Group",
+    y = "Female Labor Force Participation Rate"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 30, hjust = 1))
+```
+
+This boxplot compares female labor force participation across income groups. It gives a first indication of whether countries with different income levels show different patterns.
+
+```{r}
+#| label: plot-flfp-time-all-years
+
+jobs_time_all <- jobs %>%
+  filter(
+    !is.na(flfp),
+    !is.na(year),
+    !is.na(income_level)
+  ) %>%
+  group_by(year, income_level) %>%
+  summarise(
+    mean_flfp = mean(flfp, na.rm = TRUE),
+    observations = n(),
+    .groups = "drop"
+  )
+
+ggplot(jobs_time_all, aes(x = year, y = mean_flfp, color = income_level)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 1.5, alpha = 0.8) +
+  labs(
+    title = "Female Labor Force Participation Over Time by Income Group",
+    subtitle = "All available years",
+    x = "Year",
+    y = "Average Female Labor Force Participation Rate",
+    color = "Income Group"
+  ) +
+  theme_minimal()
+```
+
+This plot shows the development of average female labor force participation across all available years. However, the early years appear quite noisy. This is likely because the number of available country surveys differs strongly between years and income groups. Therefore, this plot is useful as a first overview, but should be interpreted carefully.
+
+```{r}
+#| label: plot-flfp-time-from-1990
+
+jobs_time_1990 <- jobs %>%
+  filter(
+    !is.na(flfp),
+    !is.na(year),
+    !is.na(income_level),
+    year >= 1990
+  ) %>%
+  group_by(year, income_level) %>%
+  summarise(
+    mean_flfp = mean(flfp, na.rm = TRUE),
+    observations = n(),
+    .groups = "drop"
+  )
+
+ggplot(jobs_time_1990, aes(x = year, y = mean_flfp, color = income_level)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 1.5, alpha = 0.8) +
+  labs(
+    title = "Female Labor Force Participation Over Time by Income Group",
+    subtitle = "Restricted to surveys from 1990 onward",
+    x = "Year",
+    y = "Average Female Labor Force Participation Rate",
+    color = "Income Group"
+  ) +
+  theme_minimal()
+```
+To reduce the influence of sparse early data, we also plot the same trend from 1990 onward. This version is easier to interpret because the time period is more consistent and contains more observations. We therefore treat the full time plot as an overview and the 1990-onward plot as the more reliable version for discussing trends.
 
 ## Analysis Plan
 
-<!-- Outline the methods you plan to use to answer your research questions. -->
+To answer the first research question, we will compare female labor force participation across income groups, regions, subsamples, and years using summary statistics and visualisations such as boxplots and line charts.
+
+To answer the second research question, we will explore relationships between female labor force participation and other variables such as unemployment, female non-agricultural employment, education indicators, and average weekly working hours. We will mainly use scatterplots, group comparisons, and correlation-based analysis.
+
+To answer the third research question, we plan to build a simple predictive model with female labor force participation as the outcome variable. Possible predictors include income level, subsample, unemployment rate, female non-agricultural employment, education variables, and average weekly working hours.
+
+Potential limitations are that important social and cultural factors such as religion, childcare policies, gender roles, and political systems are not directly included in the dataset. Therefore, our analysis can describe patterns and associations, but it cannot fully explain all causes of female labor force participation.
