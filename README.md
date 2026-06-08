@@ -21,7 +21,7 @@
 |       Name         | GitHub username |
 |--------------------|-----------------|
 |Krenar Hoxha        |KrenarHoxha      |
-|Thomas Killinger    |                 |
+|Thomas Killinger    |thomaskillinger  |
 |Victoria Jodl       |vmj1611                 |
 |Daniel Kling        |idxny            |
 ## Repository Structure
