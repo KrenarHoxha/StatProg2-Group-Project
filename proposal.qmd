@@ -2,8 +2,9 @@
 title: "Project Proposal"
 author:
   - "Krenar Hoxha"
-  - "Group Member 2"
-  - "Group Member 3"
+  - "Thomas Killinger"
+  - "Victoria Jodl"
+  - "Daniel Kling"
 date: "2026-06-08"
 ---
 
