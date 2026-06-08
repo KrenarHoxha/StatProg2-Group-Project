@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "proposal.html#research-questions",
+    "href": "proposal.html#research-questions",
+    "title": "Project Proposal",
+    "section": "Research Questions",
+    "text": "Research Questions"
+  },
+  {
+    "objectID": "proposal.html#initial-eda",
+    "href": "proposal.html#initial-eda",
+    "title": "Project Proposal",
+    "section": "Initial EDA",
+    "text": "Initial EDA\n\n\nCode\nlibrary(tidyverse)\n\n\nWarning: package 'ggplot2' was built under R version 4.5.2\n\n\nWarning: package 'tibble' was built under R version 4.5.2\n\n\nWarning: package 'tidyr' was built under R version 4.5.2\n\n\nWarning: package 'readr' was built under R version 4.5.2\n\n\nWarning: package 'purrr' was built under R version 4.5.2\n\n\nWarning: package 'dplyr' was built under R version 4.5.2\n\n\nWarning: package 'lubridate' was built under R version 4.5.2\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nCode\nlibrary(here)\n\n\nhere() starts at /Users/danielkling/StatProg2Project/StatProg2-Group-Project\n\n\nCode\n# data &lt;- read_csv(here(\"data\", \"raw\", \"data.csv\"))"
+  },
+  {
+    "objectID": "proposal.html#analysis-plan",
+    "href": "proposal.html#analysis-plan",
+    "title": "Project Proposal",
+    "section": "Analysis Plan",
+    "text": "Analysis Plan"
+  },
+  {
+    "objectID": "index.html#data",
+    "href": "index.html#data",
+    "title": "Project Title",
+    "section": "Data",
+    "text": "Data"
+  },
+  {
+    "objectID": "index.html#results",
+    "href": "index.html#results",
+    "title": "Project Title",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "index.html#discussion",
+    "href": "index.html#discussion",
+    "title": "Project Title",
+    "section": "Discussion",
+    "text": "Discussion"
+  },
+  {
+    "objectID": "CONTRIBUTING.html",
+    "href": "CONTRIBUTING.html",
+    "title": "Contributions",
+    "section": "",
+    "text": "[Name] — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]\n[Name] — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]\n[Name] — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]\n\n\n\n\nWe used the following AI tools in this project:\n\n\n\nTool\nPurpose\nScope\n\n\n\n\n\n\n\n\n\n\nAll AI-generated code and text was reviewed and verified by a group member before inclusion."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#group-members",
+    "href": "CONTRIBUTING.html#group-members",
+    "title": "Contributions",
+    "section": "",
+    "text": "[Name] — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]\n[Name] — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]\n[Name] — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#ai-tool-disclosure",
+    "href": "CONTRIBUTING.html#ai-tool-disclosure",
+    "title": "Contributions",
+    "section": "",
+    "text": "We used the following AI tools in this project:\n\n\n\nTool\nPurpose\nScope\n\n\n\n\n\n\n\n\n\n\nAll AI-generated code and text was reviewed and verified by a group member before inclusion."
+  }
+]
