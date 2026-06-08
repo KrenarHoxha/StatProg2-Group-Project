@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Group Member 1">
+<meta name="author" content="Krenar Hoxha">
 <meta name="author" content="Group Member 2">
 <meta name="author" content="Group Member 3">
 <meta name="dcterms.date" content="2026-06-08">
@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-85ee6fa7f4150c29be0325b263c6ab25.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -180,7 +180,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Authors</div>
     <div class="quarto-title-meta-contents">
-             <p>Group Member 1 </p>
+             <p>Krenar Hoxha </p>
              <p>Group Member 2 </p>
              <p>Group Member 3 </p>
           </div>
@@ -203,13 +203,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="dataset" class="level2">
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
-<!-- Describe the dataset: source, licence, dimensions, key variables. -->
+<p>We use the <strong>Global Jobs Indicators Database</strong> from the World Bank. The dataset contains labour market indicators for different countries, income groups, subsamples, and survey years.</p>
+<p>Our project focuses on <strong>Female Labor Force Participation</strong>, especially how it differs across countries, income levels, urban/rural residence, and over time.</p>
+<p>Key variables for our initial analysis are:</p>
+<ul>
+<li>Female Labor Force Participation Rate, aged 15–64</li>
+<li>Income Level Name</li>
+<li>Region Code</li>
+<li>Subsample</li>
+<li>Year of survey</li>
+<li>Unemployment Rate, aged 15–64</li>
+<li>Female in non-agricultural employment, aged 15–64</li>
+<li>Average weekly working hours</li>
+</ul>
 </section>
 <section id="research-questions" class="level2">
 <h2 class="anchored" data-anchor-id="research-questions">Research Questions</h2>
 <ol type="1">
-<li></li>
-<li></li>
+<li><p><strong>How does female labor force participation vary across countries, income groups, urban/rural populations, and over time?</strong></p></li>
+<li><p><strong>Which socioeconomic and labour market factors are associated with female labor force participation?</strong></p></li>
+<li><p><strong>Can female labor force participation be predicted using socioeconomic and labour market indicators?</strong></p></li>
 </ol>
 </section>
 <section id="initial-eda" class="level2">
@@ -219,27 +232,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.5.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'tibble' was built under R version 4.5.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'tidyr' was built under R version 4.5.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'readr' was built under R version 4.5.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'purrr' was built under R version 4.5.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'dplyr' was built under R version 4.5.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'lubridate' was built under R version 4.5.2</code></pre>
-</div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.2.1     ✔ readr     2.2.0
@@ -254,21 +246,352 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>here() starts at /Users/danielkling/StatProg2Project/StatProg2-Group-Project</code></pre>
+<pre><code>here() starts at /home/lezzo/UNI/R-Project/StatProg2-Group-Project</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- read_csv(here("data", "raw", "data.csv"))</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<!-- Add 2–3 exploratory plots and a brief commentary on what you observe. -->
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>jobs_raw <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"raw"</span>, <span class="st">"join_database_w_definitions.xlsx"</span>),</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">skip =</span> <span class="dv">3</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(jobs_raw)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 14,628
+Columns: 103
+$ `Country Name`                                                                     &lt;chr&gt; …
+$ `Country Code`                                                                     &lt;chr&gt; …
+$ `Region Code`                                                                      &lt;chr&gt; …
+$ Subsample                                                                          &lt;chr&gt; …
+$ `Income Level Name`                                                                &lt;chr&gt; …
+$ `Income Level Code`                                                                &lt;chr&gt; …
+$ `Year of survey`                                                                   &lt;dbl&gt; …
+$ `Survey Data Source`                                                               &lt;chr&gt; …
+$ `Survey Type`                                                                      &lt;chr&gt; …
+$ `Total population`                                                                 &lt;dbl&gt; …
+$ `Children, aged 0-14`                                                              &lt;dbl&gt; …
+$ `Youth, aged 15-24`                                                                &lt;dbl&gt; …
+$ `Adult, aged 25-64`                                                                &lt;dbl&gt; …
+$ `Elderly, aged 65+`                                                                &lt;dbl&gt; …
+$ `Urban Population (% of total Population)`                                         &lt;dbl&gt; …
+$ `Working Age Population, aged 15-64 (% of total Pop.)`                             &lt;dbl&gt; …
+$ `Dependency Rate, all compared to 15-64`                                           &lt;dbl&gt; …
+$ `Youth Dependency Rate, younger than 15 compared to 15-64`                         &lt;dbl&gt; …
+$ `Old Age Dependency Rate, older than 64 compared to 15-64`                         &lt;dbl&gt; …
+$ `Labor Force, aged 15-64`                                                          &lt;dbl&gt; …
+$ `Labor Force Participation Rate, aged 15-64`                                       &lt;dbl&gt; …
+$ `Female Labor Force Participation Rate, aged 15-64`                                &lt;dbl&gt; …
+$ `Not in labor force or education rate among youth, aged 15-24`                     &lt;dbl&gt; …
+$ `Share of workers (aged 15-64) with more than one jobs in last week`               &lt;dbl&gt; …
+$ `Employment to Population Ratio, aged 15-64`                                       &lt;dbl&gt; …
+$ `Employment Rate, aged 15-64`                                                      &lt;dbl&gt; …
+$ `Unemployment Rate, aged 15-64`                                                    &lt;dbl&gt; …
+$ `Youth Employment Rate, aged 15-24`                                                &lt;dbl&gt; …
+$ `Youth Unemployment Rate, aged 15-24`                                              &lt;dbl&gt; …
+$ `Wage employees, aged 15-64`                                                       &lt;dbl&gt; …
+$ `Self-employed, aged 15-64`                                                        &lt;dbl&gt; …
+$ `Unpaid, aged 15-64`                                                               &lt;dbl&gt; …
+$ `Employers, aged 15-64`                                                            &lt;dbl&gt; …
+$ `Unpaid or Self-employed, age 15-64`                                               &lt;dbl&gt; …
+$ `Share of informal jobs, aged 15-64`                                               &lt;dbl&gt; …
+$ `Share of work contract`                                                           &lt;dbl&gt; …
+$ `Share of health insurance`                                                        &lt;dbl&gt; …
+$ `Share of social security`                                                         &lt;dbl&gt; …
+$ `Public sector employment, aged 15-64`                                             &lt;dbl&gt; …
+$ `Agriculture, aged 15-64`                                                          &lt;dbl&gt; …
+$ `Industry, aged 15-64`                                                             &lt;dbl&gt; …
+$ `Services, aged 15-64`                                                             &lt;dbl&gt; …
+$ `Mining, aged 15-64`                                                               &lt;dbl&gt; …
+$ `Manufacturing, aged 15-64`                                                        &lt;dbl&gt; …
+$ `Electricity and utilities, aged 15-64`                                            &lt;dbl&gt; …
+$ `Construction, aged 15-64`                                                         &lt;dbl&gt; …
+$ `Commerce, aged 15-64`                                                             &lt;dbl&gt; …
+$ `Transport &amp; Communication, aged 15-64`                                            &lt;dbl&gt; …
+$ `Financial and Business Services, aged 15-64`                                      &lt;dbl&gt; …
+$ `Public Administration, aged 15-64`                                                &lt;dbl&gt; …
+$ `Other services, aged 15-64`                                                       &lt;dbl&gt; …
+$ `Female in non-agricultural employment, aged 15-64`                                &lt;dbl&gt; …
+$ `Youth in non-agricultural employment, aged 15-64`                                 &lt;dbl&gt; …
+$ `Non-Agricultural wage employment, aged 15-64`                                     &lt;dbl&gt; …
+$ `Non-Agricultural unpaid employment, aged 15-64`                                   &lt;dbl&gt; …
+$ `Non-Agricultural employer, aged 15-64`                                            &lt;dbl&gt; …
+$ `Non-Agricultural self-employed, aged 15-64`                                       &lt;dbl&gt; …
+$ `Youth Non-Agricultural wage employment, aged 15-24`                               &lt;dbl&gt; …
+$ `Wage employment in agriculture, aged 15-64`                                       &lt;dbl&gt; …
+$ `Wage employment in industry, aged 15-64`                                          &lt;dbl&gt; …
+$ `Wage employment in services, aged 15-64`                                          &lt;dbl&gt; …
+$ `Senior Officials, aged 15-64`                                                     &lt;dbl&gt; …
+$ `Professionals, aged 15-64`                                                        &lt;dbl&gt; …
+$ `Technicians, aged 15-64`                                                          &lt;dbl&gt; …
+$ `Clerks, aged 15-64`                                                               &lt;dbl&gt; …
+$ `Service and Market Sales, aged 15-64`                                             &lt;dbl&gt; …
+$ `Skilled Agriculture, aged 15-64`                                                  &lt;dbl&gt; …
+$ `Craft Workers, aged 15-64`                                                        &lt;dbl&gt; …
+$ `Machine Operators, aged 15-64`                                                    &lt;dbl&gt; …
+$ `Elementary Occupations, aged 15-64`                                               &lt;dbl&gt; …
+$ `Armed Forces`                                                                     &lt;dbl&gt; …
+$ `Average weekly working hours`                                                     &lt;dbl&gt; …
+$ `Underemployment, &lt;35 hours per week`                                              &lt;dbl&gt; …
+$ `Excessive working hours,&gt;48 hours per week`                                       &lt;dbl&gt; …
+$ `Median Earnings for wage workers per hour, local nominal currency`                &lt;dbl&gt; …
+$ `Median Earnings for wage workers per month, local nominal currency`               &lt;dbl&gt; …
+$ `Median Earnings for wage workers per month in agriculture, local nominal currenc` &lt;dbl&gt; …
+$ `Median Earnings for wage workers per month in industry, local nominal currency`   &lt;dbl&gt; …
+$ `Median Earnings for wage workers per month in service, local nominal currency`    &lt;dbl&gt; …
+$ `Median Earnings for wage workers per hour,  deflated to 2011 local currency valu` &lt;dbl&gt; …
+$ `Real Median Hourly  Wages in USD (base 2011), PPP adjusted`                       &lt;dbl&gt; …
+$ `Median Earnings for wage workers per month, deflated to 2011 local currency valu` &lt;dbl&gt; …
+$ `Real Median Monthly Wages in USD (base 2011), PPP adjusted`                       &lt;dbl&gt; …
+$ `Female to Male gender wage gap, calculated with median wages`                     &lt;dbl&gt; …
+$ `Public to Private wage gap, calculated with median wages`                         &lt;dbl&gt; …
+$ `No Education`                                                                     &lt;dbl&gt; …
+$ `Primary Education`                                                                &lt;dbl&gt; …
+$ `Secondary Education`                                                              &lt;dbl&gt; …
+$ `Post Secondary Education`                                                         &lt;dbl&gt; …
+$ `Mean number of years of education completed, aged 17 and older`                   &lt;dbl&gt; …
+$ `Enrollment rate for individuals aged 6-16`                                        &lt;dbl&gt; …
+$ `Individual age`                                                                   &lt;dbl&gt; …
+$ `Mean age of worker between 15-64`                                                 &lt;dbl&gt; …
+$ `Mean age of worker in agriculture, between 15-64`                                 &lt;dbl&gt; …
+$ `Mean age of worker in industry, between 15-64`                                    &lt;dbl&gt; …
+$ `Mean age of worker in services, between 15-64`                                    &lt;dbl&gt; …
+$ `Mean age of wage worker, between 15-64`                                           &lt;dbl&gt; …
+$ `Mean age of self-employed or unpaid worker, between 15-64`                        &lt;dbl&gt; …
+$ `Mean age of employer, between 15-64`                                              &lt;dbl&gt; …
+$ `Total flags in survey`                                                            &lt;dbl&gt; …
+$ `Percentile (100 = max), total flags`                                              &lt;dbl&gt; …
+$ `Flags over max number of flags`                                                   &lt;dbl&gt; …
+$ `Percentile (100 = max), share of flags`                                           &lt;dbl&gt; …</code></pre>
+</div>
+</div>
+<p>We first inspect the structure of the dataset to understand the number of variables, the available observations, and the relevant labour market indicators.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>jobs <span class="ot">&lt;-</span> jobs_raw <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">country =</span> <span class="st">`</span><span class="at">Country Name</span><span class="st">`</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">region =</span> <span class="st">`</span><span class="at">Region Code</span><span class="st">`</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">income_level =</span> <span class="st">`</span><span class="at">Income Level Name</span><span class="st">`</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">subsample =</span> <span class="st">`</span><span class="at">Subsample</span><span class="st">`</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="st">`</span><span class="at">Year of survey</span><span class="st">`</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">flfp =</span> <span class="st">`</span><span class="at">Female Labor Force Participation Rate, aged 15-64</span><span class="st">`</span>,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">unemployment =</span> <span class="st">`</span><span class="at">Unemployment Rate, aged 15-64</span><span class="st">`</span>,</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">female_non_agri =</span> <span class="st">`</span><span class="at">Female in non-agricultural employment, aged 15-64</span><span class="st">`</span>,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_weekly_hours =</span> <span class="st">`</span><span class="at">Average weekly working hours</span><span class="st">`</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>jobs <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">observations =</span> <span class="fu">n</span>(),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">countries =</span> <span class="fu">n_distinct</span>(country),</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">income_groups =</span> <span class="fu">n_distinct</span>(income_level),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">first_year =</span> <span class="fu">min</span>(year, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">last_year =</span> <span class="fu">max</span>(year, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 5
+  observations countries income_groups first_year last_year
+         &lt;int&gt;     &lt;int&gt;         &lt;int&gt;      &lt;dbl&gt;     &lt;dbl&gt;
+1        14628       168             4       1970      2021</code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>jobs <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">everything</span>(),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="sc">~</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(.))</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">everything</span>(),</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"variable"</span>,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"missing_values"</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 2
+  variable         missing_values
+  &lt;chr&gt;                     &lt;int&gt;
+1 country                       0
+2 region                        0
+3 income_level                  0
+4 subsample                     0
+5 year                          0
+6 flfp                       1934
+7 unemployment                274
+8 female_non_agri            3479
+9 avg_weekly_hours           3326</code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>jobs <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_flfp =</span> <span class="fu">mean</span>(flfp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_flfp =</span> <span class="fu">median</span>(flfp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_flfp =</span> <span class="fu">min</span>(flfp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_flfp =</span> <span class="fu">max</span>(flfp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 4
+  mean_flfp median_flfp min_flfp max_flfp
+      &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+1     0.537       0.556        0        1</code></pre>
+</div>
+</div>
+<p>The summary statistics give us a first impression of the overall distribution of female labor force participation in the dataset.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(jobs, <span class="fu">aes</span>(<span class="at">x =</span> flfp)) <span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>) <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution of Female Labor Force Participation"</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Female Labor Force Participation Rate"</span>,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Number of observations"</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1934 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="proposal_files/figure-html/plot-flfp-distribution-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This histogram shows how female labor force participation is distributed across all available observations. It helps us identify whether most observations are concentrated around low, medium, or high participation rates.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(jobs, <span class="fu">aes</span>(<span class="at">x =</span> income_level, <span class="at">y =</span> flfp)) <span class="sc">+</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Female Labor Force Participation by Income Group"</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Income Group"</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Female Labor Force Participation Rate"</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1934 rows containing non-finite outside the scale range
+(`stat_boxplot()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="proposal_files/figure-html/plot-flfp-income-group-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This boxplot compares female labor force participation across income groups. It gives a first indication of whether countries with different income levels show different patterns.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>jobs_time_all <span class="ot">&lt;-</span> jobs <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(flfp),</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(year),</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(income_level)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year, income_level) <span class="sc">%&gt;%</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_flfp =</span> <span class="fu">mean</span>(flfp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">observations =</span> <span class="fu">n</span>(),</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(jobs_time_all, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> mean_flfp, <span class="at">color =</span> income_level)) <span class="sc">+</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Female Labor Force Participation Over Time by Income Group"</span>,</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"All available years"</span>,</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average Female Labor Force Participation Rate"</span>,</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Income Group"</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="proposal_files/figure-html/plot-flfp-time-all-years-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This plot shows the development of average female labor force participation across all available years. However, the early years appear quite noisy. This is likely because the number of available country surveys differs strongly between years and income groups. Therefore, this plot is useful as a first overview, but should be interpreted carefully.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>jobs_time_1990 <span class="ot">&lt;-</span> jobs <span class="sc">%&gt;%</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(flfp),</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(year),</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(income_level),</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    year <span class="sc">&gt;=</span> <span class="dv">1990</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year, income_level) <span class="sc">%&gt;%</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_flfp =</span> <span class="fu">mean</span>(flfp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">observations =</span> <span class="fu">n</span>(),</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(jobs_time_1990, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> mean_flfp, <span class="at">color =</span> income_level)) <span class="sc">+</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Female Labor Force Participation Over Time by Income Group"</span>,</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Restricted to surveys from 1990 onward"</span>,</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average Female Labor Force Participation Rate"</span>,</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Income Group"</span></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="proposal_files/figure-html/plot-flfp-time-from-1990-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>To reduce the influence of sparse early data, we also plot the same trend from 1990 onward. This version is easier to interpret because the time period is more consistent and contains more observations. We therefore treat the full time plot as an overview and the 1990-onward plot as the more reliable version for discussing trends.</p>
 </section>
 <section id="analysis-plan" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-plan">Analysis Plan</h2>
-<!-- Outline the methods you plan to use to answer your research questions. -->
+<p>To answer the first research question, we will compare female labor force participation across income groups, regions, subsamples, and years using summary statistics and visualisations such as boxplots and line charts.</p>
+<p>To answer the second research question, we will explore relationships between female labor force participation and other variables such as unemployment, female non-agricultural employment, education indicators, and average weekly working hours. We will mainly use scatterplots, group comparisons, and correlation-based analysis.</p>
+<p>To answer the third research question, we plan to build a simple predictive model with female labor force participation as the outcome variable. Possible predictors include income level, subsample, unemployment rate, female non-agricultural employment, education variables, and average weekly working hours.</p>
+<p>Potential limitations are that important social and cultural factors such as religion, childcare policies, gender roles, and political systems are not directly included in the dataset. Therefore, our analysis can describe patterns and associations, but it cannot fully explain all causes of female labor force participation.</p>
 
 
 </section>

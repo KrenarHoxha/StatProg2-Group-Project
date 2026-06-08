@@ -132,6 +132,19 @@ This histogram shows how female labor force participation is distributed across 
 ```{r}
 #| label: plot-flfp-income-group
 
+jobs <- jobs %>%
+  mutate(
+    income_level = factor(
+      income_level,
+      levels = c(
+        "Low income",
+        "Lower middle income",
+        "Upper middle income",
+        "High income"
+      )
+    )
+  )
+
 ggplot(jobs, aes(x = income_level, y = flfp)) +
   geom_boxplot() +
   labs(
