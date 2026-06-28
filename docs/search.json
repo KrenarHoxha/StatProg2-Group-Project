@@ -4,14 +4,14 @@
     "href": "proposal.html",
     "title": "Female Labor Force Participation Across Countries: Trends, Inequality, and Labour Market Context",
     "section": "",
-    "text": "We use the Global Jobs Indicators Database from the World Bank. The dataset contains labour market indicators for different countries, income groups, subsamples, and survey years.\nOur project focuses on Female Labor Force Participation, especially how it differs across countries, income levels, urban/rural residence, and over time.\nKey variables for our initial analysis are:\n\nFemale Labor Force Participation Rate, aged 15–64\nIncome Level Name\nRegion Code\nSubsample\nYear of survey\nUnemployment Rate, aged 15–64\nFemale in non-agricultural employment, aged 15–64\nAverage weekly working hours"
+    "text": "We use the Global Jobs Indicators Database from the World Bank. The dataset contains labour market indicators for different countries, income groups, subsamples, and survey years.\nOur project focuses on Female Labor Force Participation, especially how it differs across countries, income levels, urban/rural residence, and over time.\nKey variables for our initial analysis are renamed in the cleaned dataset as follows:\n\nflfp: Female labor force participation rate, aged 15–64\nincome_level: World Bank income group\nregion: Region code\nsubsample: Population subgroup, such as urban/rural\nyear: Year of survey\nunemployment: Unemployment rate, aged 15–64\nfemale_non_agri: Female employment in non-agricultural sectors, aged 15–64\navg_weekly_hours: Average weekly working hours"
   },
   {
     "objectID": "proposal.html#dataset",
     "href": "proposal.html#dataset",
     "title": "Female Labor Force Participation Across Countries: Trends, Inequality, and Labour Market Context",
     "section": "",
-    "text": "We use the Global Jobs Indicators Database from the World Bank. The dataset contains labour market indicators for different countries, income groups, subsamples, and survey years.\nOur project focuses on Female Labor Force Participation, especially how it differs across countries, income levels, urban/rural residence, and over time.\nKey variables for our initial analysis are:\n\nFemale Labor Force Participation Rate, aged 15–64\nIncome Level Name\nRegion Code\nSubsample\nYear of survey\nUnemployment Rate, aged 15–64\nFemale in non-agricultural employment, aged 15–64\nAverage weekly working hours"
+    "text": "We use the Global Jobs Indicators Database from the World Bank. The dataset contains labour market indicators for different countries, income groups, subsamples, and survey years.\nOur project focuses on Female Labor Force Participation, especially how it differs across countries, income levels, urban/rural residence, and over time.\nKey variables for our initial analysis are renamed in the cleaned dataset as follows:\n\nflfp: Female labor force participation rate, aged 15–64\nincome_level: World Bank income group\nregion: Region code\nsubsample: Population subgroup, such as urban/rural\nyear: Year of survey\nunemployment: Unemployment rate, aged 15–64\nfemale_non_agri: Female employment in non-agricultural sectors, aged 15–64\navg_weekly_hours: Average weekly working hours"
   },
   {
     "objectID": "proposal.html#research-questions",
@@ -32,7 +32,28 @@
     "href": "proposal.html#analysis-plan",
     "title": "Female Labor Force Participation Across Countries: Trends, Inequality, and Labour Market Context",
     "section": "Analysis Plan",
-    "text": "Analysis Plan\nTo answer the first research question, we will analyse how female labor force participation differs across income groups, subsamples, and survey years. We will first clean the dataset by selecting the relevant variables, filtering observations with missing female labor force participation values, and restricting the analysis to usable survey years. We will then compute grouped summary statistics, such as the mean female labor force participation rate by year, income group, and subsample. These results will be visualised using line charts and grouped comparisons to show broad trends over time and differences between income groups and urban/rural populations.\nTo answer the second research question, we will explore how female labor force participation is associated with selected labour market indicators. The main explanatory variables are unemployment rate, female employment in non-agricultural sectors, and average weekly working hours. We will use scatterplots and correlation-based summaries to inspect the relationships between these variables. In addition, we will fit a simple linear regression model with female labor force participation as the outcome variable and the selected labour market indicators as predictors. This model is used for exploratory interpretation, not for causal claims or prediction.\nThe core analysis is therefore focused on two outputs: first, visualisations and summary tables showing differences in female labor force participation across income groups, subsamples, and years; second, exploratory association results showing how female labor force participation relates to unemployment, female non-agricultural employment, and average weekly working hours.\nThe remaining work before the final submission is to improve the visual presentation of the plots, format the summary tables and model results clearly, write a careful interpretation of the findings, and polish the Quarto website. Potential limitations are that important social and cultural factors such as childcare policies, gender roles, education systems, religion, and political institutions are not directly included in the dataset. Therefore, our analysis can describe patterns and associations, but it cannot fully explain the causes of differences in female labor force participation.\nPotential limitations are that important social and cultural factors such as religion, childcare policies, gender roles, and political systems are not directly included in the dataset. Therefore, our analysis can describe patterns and associations, but it cannot fully explain all causes of female labor force participation."
+    "text": "Analysis Plan\nTo answer the first research question, we will analyse how female labor force participation differs across income groups, subsamples, and survey years. We will first clean the dataset by selecting the relevant variables, filtering observations with missing female labor force participation values, and restricting the analysis to usable survey years. We will then compute grouped summary statistics, such as the mean female labor force participation rate by year, income group, and subsample. These results will be visualised using line charts and grouped comparisons to show broad trends over time and differences between income groups and urban/rural populations.\nTo answer the second research question, we will explore how female labor force participation is associated with selected labour market indicators. The main explanatory variables are unemployment rate, female employment in non-agricultural sectors, and average weekly working hours. We will use scatterplots and correlation-based summaries to inspect the relationships between these variables. In addition, we will fit a simple linear regression model with female labor force participation as the outcome variable and the selected labour market indicators as predictors. This model is used for exploratory interpretation, not for causal claims or prediction.\nThe core analysis is therefore focused on two outputs: first, visualisations and summary tables showing differences in female labor force participation across income groups, subsamples, and years; second, exploratory association results showing how female labor force participation relates to unemployment, female non-agricultural employment, and average weekly working hours.\nThe remaining work before the final submission is to improve the visual presentation of the plots, format the summary tables and model results clearly, write a careful interpretation of the findings, and polish the Quarto website. Potential limitations are that important social and cultural factors such as childcare policies, gender roles, education systems, religion, and political institutions are not directly included in the dataset. Therefore, our analysis can describe patterns and associations, but it cannot fully explain the causes of differences in female labor force participation."
+  },
+  {
+    "objectID": "CONTRIBUTING.html",
+    "href": "CONTRIBUTING.html",
+    "title": "Contributions",
+    "section": "",
+    "text": "[Name] — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]\n[Name] — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]\n[Name] — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]\n\n\n\n\nWe used the following AI tools in this project:\n\n\n\nTool\nPurpose\nScope\n\n\n\n\n\n\n\n\n\n\nAll AI-generated code and text was reviewed and verified by a group member before inclusion."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#group-members",
+    "href": "CONTRIBUTING.html#group-members",
+    "title": "Contributions",
+    "section": "",
+    "text": "[Name] — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]\n[Name] — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]\n[Name] — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#ai-tool-disclosure",
+    "href": "CONTRIBUTING.html#ai-tool-disclosure",
+    "title": "Contributions",
+    "section": "",
+    "text": "We used the following AI tools in this project:\n\n\n\nTool\nPurpose\nScope\n\n\n\n\n\n\n\n\n\n\nAll AI-generated code and text was reviewed and verified by a group member before inclusion."
   },
   {
     "objectID": "index.html",
@@ -63,24 +84,73 @@
     "text": "Discussion"
   },
   {
-    "objectID": "CONTRIBUTING.html",
-    "href": "CONTRIBUTING.html",
-    "title": "Contributions",
+    "objectID": "report.html",
+    "href": "report.html",
+    "title": "Female Labor Force Participation Across Countries",
     "section": "",
-    "text": "[Name] — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]\n[Name] — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]\n[Name] — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]\n\n\n\n\nWe used the following AI tools in this project:\n\n\n\nTool\nPurpose\nScope\n\n\n\n\n\n\n\n\n\n\nAll AI-generated code and text was reviewed and verified by a group member before inclusion."
+    "text": "Code\nlibrary(tidyverse)\nlibrary(here)\nlibrary(gt)\nlibrary(broom)\nCode\njobs &lt;- read_csv(here(\"data\", \"processed\", \"jobs_clean.csv\"))\nflfp_by_year_income &lt;- read_csv(here(\"data\", \"processed\", \"analysis_flfp_by_year_income.csv\"))\nflfp_by_income_subsample &lt;- read_csv(here(\"data\", \"processed\", \"analysis_flfp_by_income_subsample.csv\"))\nmodel_data &lt;- read_csv(here(\"data\", \"processed\", \"analysis_model_data.csv\"))\nflfp_correlations &lt;- read_csv(here(\"data\", \"processed\", \"analysis_flfp_correlations.csv\"))\nmodel_coefficients &lt;- read_csv(here(\"data\", \"processed\", \"analysis_flfp_model_coefficients.csv\"))\nmodel_glance &lt;- read_csv(here(\"data\", \"processed\", \"analysis_flfp_model_glance.csv\"))"
   },
   {
-    "objectID": "CONTRIBUTING.html#group-members",
-    "href": "CONTRIBUTING.html#group-members",
-    "title": "Contributions",
-    "section": "",
-    "text": "[Name] — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]\n[Name] — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]\n[Name] — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]"
+    "objectID": "report.html#introduction",
+    "href": "report.html#introduction",
+    "title": "Female Labor Force Participation Across Countries",
+    "section": "Introduction",
+    "text": "Introduction\nFemale labor force participation is an important labour market indicator and a useful measure for studying gender inequality across countries. Differences in participation can reflect economic opportunities, household constraints, sectoral employment patterns, and broader institutional contexts.\nThis project is exploratory. It describes patterns and associations in the World Bank Jobs Indicators data, but it does not attempt to make causal claims about why female labor force participation differs across countries or groups."
   },
   {
-    "objectID": "CONTRIBUTING.html#ai-tool-disclosure",
-    "href": "CONTRIBUTING.html#ai-tool-disclosure",
-    "title": "Contributions",
-    "section": "",
-    "text": "We used the following AI tools in this project:\n\n\n\nTool\nPurpose\nScope\n\n\n\n\n\n\n\n\n\n\nAll AI-generated code and text was reviewed and verified by a group member before inclusion."
+    "objectID": "report.html#data",
+    "href": "report.html#data",
+    "title": "Female Labor Force Participation Across Countries",
+    "section": "Data",
+    "text": "Data\nThe project uses the World Bank Global Jobs Indicators Database, which contains labour market indicators by country, income group, survey year, and population subsample. The cleaned dataset is stored as data/processed/jobs_clean.csv.\nThe main outcome is female labor force participation among people aged 15-64 (flfp). The analysis also uses income level, subsample, survey year, unemployment, female non-agricultural employment, and average weekly working hours.\n\n\nCode\ndata_overview &lt;- tibble(\n  metric = c(\n    \"Rows\",\n    \"Countries\",\n    \"Year range\",\n    \"Income groups\",\n    \"Subsamples\"\n  ),\n  value = c(\n    nrow(jobs),\n    n_distinct(jobs$country),\n    paste(min(jobs$year, na.rm = TRUE), max(jobs$year, na.rm = TRUE), sep = \"-\"),\n    n_distinct(jobs$income_level),\n    n_distinct(jobs$subsample)\n  )\n)\n\ndata_overview |&gt;\n  gt() |&gt;\n  cols_label(\n    metric = \"Dataset feature\",\n    value = \"Value\"\n  )\n\n\n\n\n\n\n\n\nDataset feature\nValue\n\n\n\n\nRows\n12357\n\n\nCountries\n167\n\n\nYear range\n1990-2021\n\n\nIncome groups\n4\n\n\nSubsamples\n8"
+  },
+  {
+    "objectID": "report.html#research-questions",
+    "href": "report.html#research-questions",
+    "title": "Female Labor Force Participation Across Countries",
+    "section": "Research Questions",
+    "text": "Research Questions\n\nHow does female labor force participation vary across income groups, urban/rural populations, and survey years?\nHow is female labor force participation associated with unemployment, female non-agricultural employment, and average weekly working hours?"
+  },
+  {
+    "objectID": "report.html#exploratory-data-analysis",
+    "href": "report.html#exploratory-data-analysis",
+    "title": "Female Labor Force Participation Across Countries",
+    "section": "Exploratory Data Analysis",
+    "text": "Exploratory Data Analysis\n\nThe boxplot shows that female labor force participation differs across income groups, while also varying substantially within each group. This supports the first research question by showing that income level is a useful grouping variable. The spread suggests that later interpretation should avoid treating income groups as internally uniform.\n\nThe time-series figure shows mean female labor force participation by survey year and income group. The plot suggests broad differences between income groups and visible changes over time, but survey coverage differs by year. These patterns motivate grouped summaries by year and income group rather than a single overall trend.\n\nThe scatterplot shows an exploratory association between female labor force participation and unemployment. The fitted line suggests a negative association in the available data, although this cannot be interpreted causally. This motivates the second research question and the use of correlations and an exploratory regression model."
+  },
+  {
+    "objectID": "report.html#analysis",
+    "href": "report.html#analysis",
+    "title": "Female Labor Force Participation Across Countries",
+    "section": "Analysis",
+    "text": "Analysis\nFor the first research question, the analysis uses grouped summaries of female labor force participation by year, income group, and subsample. These summaries describe how participation differs across income groups, urban/rural populations, and survey years.\nFor the second research question, the analysis uses Pearson correlations and an exploratory linear model:\nflfp ~ unemployment + female_non_agri + avg_weekly_hours + income_level + subsample\nThe model describes associations only. Its coefficients should not be interpreted as causal effects, because the data do not include all relevant social, cultural, institutional, and policy factors."
+  },
+  {
+    "objectID": "report.html#results",
+    "href": "report.html#results",
+    "title": "Female Labor Force Participation Across Countries",
+    "section": "Results",
+    "text": "Results\n\nFemale Labor Force Participation by Income Group and Subsample\n\n\nCode\nflfp_by_income_subsample |&gt;\n  mutate(across(c(mean_flfp, median_flfp, sd_flfp), ~ round(.x, 3))) |&gt;\n  gt() |&gt;\n  cols_label(\n    income_level = \"Income group\",\n    subsample = \"Subsample\",\n    n = \"N\",\n    mean_flfp = \"Mean FLFP\",\n    median_flfp = \"Median FLFP\",\n    sd_flfp = \"SD FLFP\"\n  )\n\n\n\n\n\n\n\n\nIncome group\nSubsample\nN\nMean FLFP\nMedian FLFP\nSD FLFP\n\n\n\n\nHigh income\nAll\n619\n0.626\n0.645\n0.094\n\n\nHigh income\nFemale\n557\n0.627\n0.646\n0.095\n\n\nHigh income\nHigh Education\n500\n0.663\n0.669\n0.082\n\n\nHigh income\nLow Education\n517\n0.411\n0.425\n0.188\n\n\nHigh income\nOld\n557\n0.684\n0.702\n0.107\n\n\nHigh income\nRural\n458\n0.610\n0.631\n0.113\n\n\nHigh income\nUrban\n481\n0.639\n0.663\n0.092\n\n\nHigh income\nYoung\n557\n0.356\n0.330\n0.111\n\n\nLow income\nAll\n140\n0.675\n0.733\n0.206\n\n\nLow income\nFemale\n129\n0.683\n0.734\n0.199\n\n\nLow income\nHigh Education\n129\n0.584\n0.592\n0.206\n\n\nLow income\nLow Education\n129\n0.701\n0.762\n0.220\n\n\nLow income\nOld\n129\n0.746\n0.804\n0.199\n\n\nLow income\nRural\n123\n0.726\n0.800\n0.211\n\n\nLow income\nUrban\n125\n0.579\n0.582\n0.185\n\n\nLow income\nYoung\n129\n0.570\n0.580\n0.212\n\n\nLower middle income\nAll\n422\n0.496\n0.502\n0.183\n\n\nLower middle income\nFemale\n416\n0.495\n0.501\n0.182\n\n\nLower middle income\nHigh Education\n408\n0.515\n0.533\n0.171\n\n\nLower middle income\nLow Education\n410\n0.433\n0.438\n0.215\n\n\nLower middle income\nOld\n416\n0.555\n0.567\n0.200\n\n\nLower middle income\nRural\n405\n0.507\n0.494\n0.213\n\n\nLower middle income\nUrban\n408\n0.474\n0.516\n0.181\n\n\nLower middle income\nYoung\n416\n0.339\n0.329\n0.155\n\n\nUpper middle income\nAll\n515\n0.541\n0.555\n0.144\n\n\nUpper middle income\nFemale\n485\n0.540\n0.555\n0.146\n\n\nUpper middle income\nHigh Education\n476\n0.606\n0.617\n0.137\n\n\nUpper middle income\nLow Education\n479\n0.420\n0.406\n0.190\n\n\nUpper middle income\nOld\n485\n0.597\n0.616\n0.160\n\n\nUpper middle income\nRural\n424\n0.518\n0.496\n0.174\n\n\nUpper middle income\nUrban\n428\n0.570\n0.592\n0.137\n\n\nUpper middle income\nYoung\n485\n0.366\n0.342\n0.138\n\n\n\n\n\n\n\nThe grouped results show that female labor force participation differs across income groups and subsamples. These differences are descriptive patterns, not explanations of the underlying causes. The table is useful for identifying where group comparisons should be emphasized in the final interpretation.\n\n\nCorrelations with Labour Market Indicators\n\n\nCode\nflfp_correlations |&gt;\n  mutate(correlation_with_flfp = round(correlation_with_flfp, 3)) |&gt;\n  gt() |&gt;\n  cols_label(\n    variable = \"Variable\",\n    correlation_with_flfp = \"Correlation with FLFP\",\n    n_complete = \"Complete observations\"\n  )\n\n\n\n\n\n\n\n\nVariable\nCorrelation with FLFP\nComplete observations\n\n\n\n\nunemployment\n-0.335\n9500\n\n\nfemale_non_agri\n-0.041\n9500\n\n\navg_weekly_hours\n-0.178\n9500\n\n\n\n\n\n\n\nThe correlations summarize pairwise associations between female labor force participation and selected labour market indicators. In this dataset, unemployment and average weekly working hours are negatively associated with female labor force participation, while female non-agricultural employment has a weaker association. These are exploratory associations and should be interpreted cautiously.\n\n\nExploratory Linear Model\n\n\nCode\nmodel_coefficients |&gt;\n  select(term, estimate, std.error, statistic, p.value) |&gt;\n  mutate(across(where(is.numeric), ~ round(.x, 3))) |&gt;\n  gt() |&gt;\n  cols_label(\n    term = \"Term\",\n    estimate = \"Estimate\",\n    std.error = \"Std. error\",\n    statistic = \"Statistic\",\n    p.value = \"P-value\"\n  )\n\n\n\n\n\n\n\n\nTerm\nEstimate\nStd. error\nStatistic\nP-value\n\n\n\n\n(Intercept)\n0.969\n0.015\n66.198\n0.000\n\n\nunemployment\n-0.375\n0.017\n-22.618\n0.000\n\n\nfemale_non_agri\n-0.141\n0.009\n-15.057\n0.000\n\n\navg_weekly_hours\n-0.005\n0.000\n-16.121\n0.000\n\n\nincome_levelLow income\n-0.004\n0.008\n-0.538\n0.591\n\n\nincome_levelLower middle income\n-0.150\n0.005\n-32.180\n0.000\n\n\nincome_levelUpper middle income\n-0.064\n0.004\n-15.563\n0.000\n\n\nsubsampleFemale\n-0.012\n0.006\n-2.085\n0.037\n\n\nsubsampleHigh Education\n0.049\n0.006\n8.358\n0.000\n\n\nsubsampleLow Education\n-0.127\n0.006\n-21.082\n0.000\n\n\nsubsampleOld\n0.051\n0.006\n8.898\n0.000\n\n\nsubsampleRural\n-0.039\n0.006\n-6.326\n0.000\n\n\nsubsampleUrban\n0.027\n0.006\n4.479\n0.000\n\n\nsubsampleYoung\n-0.169\n0.006\n-28.105\n0.000\n\n\n\n\n\n\n\nThe model results describe conditional associations after accounting for the included labour market indicators, income group, and subsample. The coefficients are consistent with an exploratory relationship between female labor force participation and the selected labour market context variables. Because the model is not causal, the estimates should be read as descriptive patterns in the cleaned dataset."
+  },
+  {
+    "objectID": "report.html#limitations",
+    "href": "report.html#limitations",
+    "title": "Female Labor Force Participation Across Countries",
+    "section": "Limitations",
+    "text": "Limitations\nThe dataset does not include all relevant social, cultural, institutional, and policy factors that may shape female labor force participation. Important context such as childcare systems, legal institutions, social norms, education systems, and sectoral labour demand is not fully represented.\nSurvey coverage also differs across countries and years, which limits direct comparisons over time. The correlations and regression coefficients are exploratory associations, not causal effects."
+  },
+  {
+    "objectID": "report.html#conclusion",
+    "href": "report.html#conclusion",
+    "title": "Female Labor Force Participation Across Countries",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe analysis suggests that female labor force participation varies across income groups, subsamples, and survey years. It is also associated with unemployment, female non-agricultural employment, and average weekly working hours in the available data.\nThe final project could be improved with richer contextual variables and more careful model diagnostics. These additions would support a more nuanced interpretation while still avoiding causal claims unless the research design supports them."
+  },
+  {
+    "objectID": "report.html#reproducibility",
+    "href": "report.html#reproducibility",
+    "title": "Female Labor Force Participation Across Countries",
+    "section": "Reproducibility",
+    "text": "Reproducibility\nThe project uses Quarto, Git, and renv to support reproducibility. The intended workflow is:\n01_download.R -&gt; 02_clean.R -&gt; 03_eda.R -&gt; 04_analysis.R -&gt; quarto render"
   }
 ]

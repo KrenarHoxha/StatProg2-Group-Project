@@ -1,0 +1,184 @@
+---
+title: "Female Labor Force Participation Across Countries"
+subtitle: "Trends, Inequality, and Labour Market Context"
+author:
+  - "Krenar Hoxha"
+  - "Daniel Kling"
+date: "2026-06-28"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: true
+---
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(here)
+library(gt)
+library(broom)
+```
+
+```{r}
+#| label: load-analysis-data
+#| message: false
+
+jobs <- read_csv(here("data", "processed", "jobs_clean.csv"))
+flfp_by_year_income <- read_csv(here("data", "processed", "analysis_flfp_by_year_income.csv"))
+flfp_by_income_subsample <- read_csv(here("data", "processed", "analysis_flfp_by_income_subsample.csv"))
+model_data <- read_csv(here("data", "processed", "analysis_model_data.csv"))
+flfp_correlations <- read_csv(here("data", "processed", "analysis_flfp_correlations.csv"))
+model_coefficients <- read_csv(here("data", "processed", "analysis_flfp_model_coefficients.csv"))
+model_glance <- read_csv(here("data", "processed", "analysis_flfp_model_glance.csv"))
+```
+
+## Introduction
+
+Female labor force participation is an important labour market indicator and a useful measure for studying gender inequality across countries. Differences in participation can reflect economic opportunities, household constraints, sectoral employment patterns, and broader institutional contexts.
+
+This project is exploratory. It describes patterns and associations in the World Bank Jobs Indicators data, but it does not attempt to make causal claims about why female labor force participation differs across countries or groups.
+
+## Data
+
+The project uses the World Bank **Global Jobs Indicators Database**, which contains labour market indicators by country, income group, survey year, and population subsample. The cleaned dataset is stored as `data/processed/jobs_clean.csv`.
+
+The main outcome is female labor force participation among people aged 15-64 (`flfp`). The analysis also uses income level, subsample, survey year, unemployment, female non-agricultural employment, and average weekly working hours.
+
+```{r}
+#| label: data-overview-table
+
+data_overview <- tibble(
+  metric = c(
+    "Rows",
+    "Countries",
+    "Year range",
+    "Income groups",
+    "Subsamples"
+  ),
+  value = c(
+    nrow(jobs),
+    n_distinct(jobs$country),
+    paste(min(jobs$year, na.rm = TRUE), max(jobs$year, na.rm = TRUE), sep = "-"),
+    n_distinct(jobs$income_level),
+    n_distinct(jobs$subsample)
+  )
+)
+
+data_overview |>
+  gt() |>
+  cols_label(
+    metric = "Dataset feature",
+    value = "Value"
+  )
+```
+
+## Research Questions
+
+1. How does female labor force participation vary across income groups, urban/rural populations, and survey years?
+
+2. How is female labor force participation associated with unemployment, female non-agricultural employment, and average weekly working hours?
+
+## Exploratory Data Analysis
+
+![](figures/eda_flfp_by_income.png)
+
+The boxplot shows that female labor force participation differs across income groups, while also varying substantially within each group. This supports the first research question by showing that income level is a useful grouping variable. The spread suggests that later interpretation should avoid treating income groups as internally uniform.
+
+![](figures/eda_flfp_over_time_income.png)
+
+The time-series figure shows mean female labor force participation by survey year and income group. The plot suggests broad differences between income groups and visible changes over time, but survey coverage differs by year. These patterns motivate grouped summaries by year and income group rather than a single overall trend.
+
+![](figures/eda_flfp_vs_unemployment.png)
+
+The scatterplot shows an exploratory association between female labor force participation and unemployment. The fitted line suggests a negative association in the available data, although this cannot be interpreted causally. This motivates the second research question and the use of correlations and an exploratory regression model.
+
+## Analysis
+
+For the first research question, the analysis uses grouped summaries of female labor force participation by year, income group, and subsample. These summaries describe how participation differs across income groups, urban/rural populations, and survey years.
+
+For the second research question, the analysis uses Pearson correlations and an exploratory linear model:
+
+`flfp ~ unemployment + female_non_agri + avg_weekly_hours + income_level + subsample`
+
+The model describes associations only. Its coefficients should not be interpreted as causal effects, because the data do not include all relevant social, cultural, institutional, and policy factors.
+
+## Results
+
+### Female Labor Force Participation by Income Group and Subsample
+
+```{r}
+#| label: results-income-subsample
+
+flfp_by_income_subsample |>
+  mutate(across(c(mean_flfp, median_flfp, sd_flfp), ~ round(.x, 3))) |>
+  gt() |>
+  cols_label(
+    income_level = "Income group",
+    subsample = "Subsample",
+    n = "N",
+    mean_flfp = "Mean FLFP",
+    median_flfp = "Median FLFP",
+    sd_flfp = "SD FLFP"
+  )
+```
+
+The grouped results show that female labor force participation differs across income groups and subsamples. These differences are descriptive patterns, not explanations of the underlying causes. The table is useful for identifying where group comparisons should be emphasized in the final interpretation.
+
+### Correlations with Labour Market Indicators
+
+```{r}
+#| label: results-correlations
+
+flfp_correlations |>
+  mutate(correlation_with_flfp = round(correlation_with_flfp, 3)) |>
+  gt() |>
+  cols_label(
+    variable = "Variable",
+    correlation_with_flfp = "Correlation with FLFP",
+    n_complete = "Complete observations"
+  )
+```
+
+The correlations summarize pairwise associations between female labor force participation and selected labour market indicators. In this dataset, unemployment and average weekly working hours are negatively associated with female labor force participation, while female non-agricultural employment has a weaker association. These are exploratory associations and should be interpreted cautiously.
+
+### Exploratory Linear Model
+
+```{r}
+#| label: results-model-coefficients
+
+model_coefficients |>
+  select(term, estimate, std.error, statistic, p.value) |>
+  mutate(across(where(is.numeric), ~ round(.x, 3))) |>
+  gt() |>
+  cols_label(
+    term = "Term",
+    estimate = "Estimate",
+    std.error = "Std. error",
+    statistic = "Statistic",
+    p.value = "P-value"
+  )
+```
+
+The model results describe conditional associations after accounting for the included labour market indicators, income group, and subsample. The coefficients are consistent with an exploratory relationship between female labor force participation and the selected labour market context variables. Because the model is not causal, the estimates should be read as descriptive patterns in the cleaned dataset.
+
+## Limitations
+
+The dataset does not include all relevant social, cultural, institutional, and policy factors that may shape female labor force participation. Important context such as childcare systems, legal institutions, social norms, education systems, and sectoral labour demand is not fully represented.
+
+Survey coverage also differs across countries and years, which limits direct comparisons over time. The correlations and regression coefficients are exploratory associations, not causal effects.
+
+## Conclusion
+
+The analysis suggests that female labor force participation varies across income groups, subsamples, and survey years. It is also associated with unemployment, female non-agricultural employment, and average weekly working hours in the available data.
+
+The final project could be improved with richer contextual variables and more careful model diagnostics. These additions would support a more nuanced interpretation while still avoiding causal claims unless the research design supports them.
+
+## Reproducibility
+
+The project uses Quarto, Git, and `renv` to support reproducibility. The intended workflow is:
+
+`01_download.R` -> `02_clean.R` -> `03_eda.R` -> `04_analysis.R` -> `quarto render`

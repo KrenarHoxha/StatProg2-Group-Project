@@ -103,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Proposal</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./report.qmd"> 
+    <a class="nav-link" href="./report.html"> 
 <span class="menu-text">Report</span></a>
   </li>  
 </ul>
@@ -168,16 +168,16 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
 <p>We use the <strong>Global Jobs Indicators Database</strong> from the World Bank. The dataset contains labour market indicators for different countries, income groups, subsamples, and survey years.</p>
 <p>Our project focuses on <strong>Female Labor Force Participation</strong>, especially how it differs across countries, income levels, urban/rural residence, and over time.</p>
-<p>Key variables for our initial analysis are:</p>
+<p>Key variables for our initial analysis are renamed in the cleaned dataset as follows:</p>
 <ul>
-<li>Female Labor Force Participation Rate, aged 15–64</li>
-<li>Income Level Name</li>
-<li>Region Code</li>
-<li>Subsample</li>
-<li>Year of survey</li>
-<li>Unemployment Rate, aged 15–64</li>
-<li>Female in non-agricultural employment, aged 15–64</li>
-<li>Average weekly working hours</li>
+<li><code>flfp</code>: Female labor force participation rate, aged 15–64</li>
+<li><code>income_level</code>: World Bank income group</li>
+<li><code>region</code>: Region code</li>
+<li><code>subsample</code>: Population subgroup, such as urban/rural</li>
+<li><code>year</code>: Year of survey</li>
+<li><code>unemployment</code>: Unemployment rate, aged 15–64</li>
+<li><code>female_non_agri</code>: Female employment in non-agricultural sectors, aged 15–64</li>
+<li><code>avg_weekly_hours</code>: Average weekly working hours</li>
 </ul>
 </section>
 <section id="research-questions" class="level2">
@@ -203,7 +203,6 @@ ul.task-list li input[type="checkbox"] {
 <p>To answer the second research question, we will explore how female labor force participation is associated with selected labour market indicators. The main explanatory variables are unemployment rate, female employment in non-agricultural sectors, and average weekly working hours. We will use scatterplots and correlation-based summaries to inspect the relationships between these variables. In addition, we will fit a simple linear regression model with female labor force participation as the outcome variable and the selected labour market indicators as predictors. This model is used for exploratory interpretation, not for causal claims or prediction.</p>
 <p>The core analysis is therefore focused on two outputs: first, visualisations and summary tables showing differences in female labor force participation across income groups, subsamples, and years; second, exploratory association results showing how female labor force participation relates to unemployment, female non-agricultural employment, and average weekly working hours.</p>
 <p>The remaining work before the final submission is to improve the visual presentation of the plots, format the summary tables and model results clearly, write a careful interpretation of the findings, and polish the Quarto website. Potential limitations are that important social and cultural factors such as childcare policies, gender roles, education systems, religion, and political institutions are not directly included in the dataset. Therefore, our analysis can describe patterns and associations, but it cannot fully explain the causes of differences in female labor force participation.</p>
-<p>Potential limitations are that important social and cultural factors such as religion, childcare policies, gender roles, and political systems are not directly included in the dataset. Therefore, our analysis can describe patterns and associations, but it cannot fully explain all causes of female labor force participation.</p>
 
 
 </section>
