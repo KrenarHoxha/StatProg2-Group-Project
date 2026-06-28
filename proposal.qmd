@@ -12,16 +12,16 @@ We use the **Global Jobs Indicators Database** from the World Bank. The dataset 
 
 Our project focuses on **Female Labor Force Participation**, especially how it differs across countries, income levels, urban/rural residence, and over time.
 
-Key variables for our initial analysis are:
+Key variables for our initial analysis are renamed in the cleaned dataset as follows:
 
-* Female Labor Force Participation Rate, aged 15–64
-* Income Level Name
-* Region Code
-* Subsample
-* Year of survey
-* Unemployment Rate, aged 15–64
-* Female in non-agricultural employment, aged 15–64
-* Average weekly working hours
+* `flfp`: Female labor force participation rate, aged 15–64
+* `income_level`: World Bank income group
+* `region`: Region code
+* `subsample`: Population subgroup, such as urban/rural
+* `year`: Year of survey
+* `unemployment`: Unemployment rate, aged 15–64
+* `female_non_agri`: Female employment in non-agricultural sectors, aged 15–64
+* `avg_weekly_hours`: Average weekly working hours
 
 ## Research Questions
 
