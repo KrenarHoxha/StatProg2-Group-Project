@@ -1,5 +1,4 @@
-# Project Title
-Female Labor Force Participation Across Countries: Trends, Inequality, and Labour Market Context
+# Female Labor Force Participation Across Countries: Trends, Inequality, and Labour Market Context
 
 > This project analyses female labor force participation across countries using the Global Jobs Indicators Database. We examine trends over time by income group and explore associations with unemployment, female non-agricultural employment, and working hours. The analysis is exploratory and aims to communicate global labour market patterns through reproducible R code, Quarto reporting, and clear visualisations.
 
