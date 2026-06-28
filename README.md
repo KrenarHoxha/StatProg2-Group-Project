@@ -21,12 +21,25 @@ and average weekly working hours?
 ## Repository Structure
 
 ```
-data/raw/        read-only raw data and licence documentation
-data/processed/  cleaned data produced by code/02_clean.R
-code/            numbered R scripts (01 download → 02 clean → 03 EDA → 04 analysis)
-docs/            rendered Quarto website output (auto-generated, do not edit)
-proposal.qmd     W07 project proposal
-report.qmd       final analysis report
+code/
+  01_download.R  download the raw World Bank Excel file
+  02_clean.R     clean raw data and create jobs_clean.csv
+  03_eda.R       create exploratory summaries and figures
+  04_analysis.R  create main analysis outputs
+
+data/
+  raw/            raw Excel dataset and licence file
+  processed/      cleaned data, EDA summaries, and analysis CSV outputs
+
+figures/          project-level EDA figures used in reports
+docs/             rendered Quarto website output
+renv/             project-local R environment files
+
+_quarto.yml       Quarto website configuration
+index.qmd         website home page
+proposal.qmd      project proposal
+report.qmd        final analysis report
+renv.lock         recorded R package environment
 ```
 
 ## How to reproduce
