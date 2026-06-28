@@ -1,6 +1,6 @@
 # 03_eda.R
 # Exploratory data analysis: distributions, missingness, relationships.
-# Figures are saved to docs/figures/ for inclusion in reports.
+# Figures are saved to figures/ for inclusion in reports.
 
 library(tidyverse)
 library(here)
@@ -29,28 +29,8 @@ print(summary(jobs$flfp))
 print(count(jobs, income_level))
 print(count(jobs, subsample))
 
-fig_dir <- here("docs", "figures")
+fig_dir <- here("figures")
 dir.create(fig_dir, recursive = TRUE, showWarnings = FALSE)
-
-summary_by_income <- jobs |>
-  group_by(income_level) |>
-  summarise(
-    n = n(),
-    mean_flfp = mean(flfp, na.rm = TRUE),
-    median_flfp = median(flfp, na.rm = TRUE),
-    sd_flfp = sd(flfp, na.rm = TRUE),
-    .groups = "drop"
-  )
-
-summary_by_subsample <- jobs |>
-  group_by(subsample) |>
-  summarise(
-    n = n(),
-    mean_flfp = mean(flfp, na.rm = TRUE),
-    median_flfp = median(flfp, na.rm = TRUE),
-    sd_flfp = sd(flfp, na.rm = TRUE),
-    .groups = "drop"
-  )
 
 summary_by_year_income <- jobs |>
   group_by(year, income_level) |>
@@ -59,19 +39,6 @@ summary_by_year_income <- jobs |>
     mean_flfp = mean(flfp, na.rm = TRUE),
     .groups = "drop"
   )
-
-write_csv(
-  summary_by_income,
-  here("data", "processed", "eda_summary_by_income.csv")
-)
-write_csv(
-  summary_by_subsample,
-  here("data", "processed", "eda_summary_by_subsample.csv")
-)
-write_csv(
-  summary_by_year_income,
-  here("data", "processed", "eda_summary_by_year_income.csv")
-)
 
 flfp_by_income <- ggplot(jobs, aes(x = income_level, y = flfp)) +
   geom_boxplot(fill = "#4E79A7", alpha = 0.8, na.rm = TRUE) +
@@ -85,7 +52,7 @@ flfp_by_income <- ggplot(jobs, aes(x = income_level, y = flfp)) +
   theme(axis.text.x = element_text(angle = 25, hjust = 1))
 
 ggsave(
-  here("docs", "figures", "eda_flfp_by_income.png"),
+  here("figures", "eda_flfp_by_income.png"),
   plot = flfp_by_income,
   width = 8,
   height = 5,
@@ -107,7 +74,7 @@ flfp_over_time_income <- ggplot(
   theme_minimal()
 
 ggsave(
-  here("docs", "figures", "eda_flfp_over_time_income.png"),
+  here("figures", "eda_flfp_over_time_income.png"),
   plot = flfp_over_time_income,
   width = 8,
   height = 5,
@@ -130,11 +97,11 @@ flfp_vs_unemployment <- ggplot(
   theme_minimal()
 
 ggsave(
-  here("docs", "figures", "eda_flfp_vs_unemployment.png"),
+  here("figures", "eda_flfp_vs_unemployment.png"),
   plot = flfp_vs_unemployment,
   width = 8,
   height = 5,
   dpi = 300
 )
 
-message("EDA outputs written to data/processed/ and docs/figures/")
+message("EDA figures written to figures/")

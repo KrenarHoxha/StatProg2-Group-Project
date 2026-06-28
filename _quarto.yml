@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - figures/
 
 website:
   title: "StatProg2 Group Project"
