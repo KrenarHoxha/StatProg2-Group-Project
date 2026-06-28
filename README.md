@@ -1,12 +1,12 @@
 # Project Title
-<!--  TODO Titel    -->
+Female Labor Force Participation Across Countries: Trends, Inequality, and Labour Market Context
 
-> Replace this with a short description of your project and dataset.
+> This project analyses female labor force participation across countries using the Global Jobs Indicators Database. We examine trends over time by income group and explore associations with unemployment, female non-agricultural employment, and working hours. The analysis is exploratory and aims to communicate global labour market patterns through reproducible R code, Quarto reporting, and clear visualisations.
 
 ## Research Questions
-<!--  TODO Forschungsfragen einbauen    -->
-1. <!-- Your first research question -->
-2. <!-- Your second research question -->
+1. How does female labor force participation vary across some countries, income groups, urban/rural populations, over time?
+2. How is female labor force participation associated with unemployment, female non-agricultural employment,
+and average weekly working hours?
 
 ## Dataset
 
@@ -14,15 +14,10 @@
 - **Licence:** Creative Commons Attribution 4.0
 - **Description:** The Global Jobs Indicators Database, JOIN, presents more than 100 labor market indicators for 168 countries and 1,802 surveys. The indicators cover socio-demographics, labor force status, employment type, employment composition by sector and occupation, education level completed, hours worked, earnings, and also provide information on survey quality. The indicators are nationally representative and available for different types of workers. This includes workers in urban or rural areas, men and women, younger (age 15-24) and older (age 25-64) workers, or workers with lower and higher education.
 
-<!--    Habe hier einfach die beschreibung von der website kopiert, TODO prüfen ob ok    -->
-
 ## Group Members
-<!--  TODO Prüfen ob namen korrekt und github namen ergänzen  -->
 |       Name         | GitHub username |
 |--------------------|-----------------|
 |Krenar Hoxha        |KrenarHoxha      |
-|Thomas Killinger    |thomaskillinger  |
-|Victoria Jodl       |vmj1611                 |
 |Daniel Kling        |idxny            |
 ## Repository Structure
 

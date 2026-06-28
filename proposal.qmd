@@ -1,11 +1,9 @@
 ---
-title: "Project Proposal"
+title: "Female Labor Force Participation Across Countries: Trends, Inequality, and Labour Market Context"
 author:
   - "Krenar Hoxha"
-  - "Thomas Killinger"
-  - "Victoria Jodl"
   - "Daniel Kling"
-date: "2026-06-08"
+date: "2026-06-28"
 ---
 
 ## Dataset
@@ -27,11 +25,10 @@ Key variables for our initial analysis are:
 
 ## Research Questions
 
-1. **How does female labor force participation vary across countries, income groups, urban/rural populations, and over time?**
+1. **How does female labor force participation vary across some countries, income groups, urban/rural populations, over time?**
 
-2. **Which socioeconomic and labour market factors are associated with female labor force participation?**
-
-3. **Can female labor force participation be predicted using socioeconomic and labour market indicators?**
+2. **How is female labor force participation associated with unemployment, female non-agricultural employment,
+and average weekly working hours?**
 
 ## Initial EDA
 
@@ -223,10 +220,12 @@ To reduce the influence of sparse early data, we also plot the same trend from 1
 
 ## Analysis Plan
 
-To answer the first research question, we will compare female labor force participation across income groups, regions, subsamples, and years using summary statistics and visualisations such as boxplots and line charts.
+To answer the first research question, we will analyse how female labor force participation differs across income groups, subsamples, and survey years. We will first clean the dataset by selecting the relevant variables, filtering observations with missing female labor force participation values, and restricting the analysis to usable survey years. We will then compute grouped summary statistics, such as the mean female labor force participation rate by year, income group, and subsample. These results will be visualised using line charts and grouped comparisons to show broad trends over time and differences between income groups and urban/rural populations.
 
-To answer the second research question, we will explore relationships between female labor force participation and other variables such as unemployment, female non-agricultural employment, education indicators, and average weekly working hours. We will mainly use scatterplots, group comparisons, and correlation-based analysis.
+To answer the second research question, we will explore how female labor force participation is associated with selected labour market indicators. The main explanatory variables are unemployment rate, female employment in non-agricultural sectors, and average weekly working hours. We will use scatterplots and correlation-based summaries to inspect the relationships between these variables. In addition, we will fit a simple linear regression model with female labor force participation as the outcome variable and the selected labour market indicators as predictors. This model is used for exploratory interpretation, not for causal claims or prediction.
 
-To answer the third research question, we plan to build a simple predictive model with female labor force participation as the outcome variable. Possible predictors include income level, subsample, unemployment rate, female non-agricultural employment, education variables, and average weekly working hours.
+The core analysis is therefore focused on two outputs: first, visualisations and summary tables showing differences in female labor force participation across income groups, subsamples, and years; second, exploratory association results showing how female labor force participation relates to unemployment, female non-agricultural employment, and average weekly working hours.
+
+The remaining work before the final submission is to improve the visual presentation of the plots, format the summary tables and model results clearly, write a careful interpretation of the findings, and polish the Quarto website. Potential limitations are that important social and cultural factors such as childcare policies, gender roles, education systems, religion, and political institutions are not directly included in the dataset. Therefore, our analysis can describe patterns and associations, but it cannot fully explain the causes of differences in female labor force participation.
 
 Potential limitations are that important social and cultural factors such as religion, childcare policies, gender roles, and political systems are not directly included in the dataset. Therefore, our analysis can describe patterns and associations, but it cannot fully explain all causes of female labor force participation.

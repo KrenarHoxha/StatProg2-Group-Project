@@ -1,20 +1,22 @@
 ---
-title: "Project Title"
+title: "Female Labor Force Participation Across Countries: Trends, Inequality, and Labour Market Context"
 author:
-  - "Group Member 1"
-  - "Group Member 2"
-  - "Group Member 3"
+  - "Krenar Hoxha"
+  - "Daniel Kling"
 date: today
 ---
 
 ## Introduction
 
-<!-- Motivate the dataset and research questions. -->
+Female labor force participation is an important indicator for understanding economic opportunity, gender inequality, and labour market development across countries. In this project, we use the Global Jobs Indicators Database to explore how female labor force participation varies between countries, income groups, and years. 
+
+Our analysis focuses on two main questions: first, how female labor force participation has changed over time across different income groups, and second, how it is associated with selected labour market indicators such as unemployment, female non-agricultural employment, and average weekly working hours. The goal is not to make causal claims, but to provide a reproducible exploratory analysis with clear visualisations and cautious interpretation.
 
 ## Data
 
-<!-- Brief description of the dataset. -->
+The project uses the Global Jobs Indicators Database, which contains country-level labour market indicators from multiple years. The dataset includes information on countries, regions, income groups, survey years, labour force participation, unemployment, employment by sector, and working hours.
 
+For this project, we focus mainly on female labor force participation among people aged 15–64. We also use selected variables such as unemployment rate, female employment in non-agricultural sectors, average weekly working hours, income group, country, region, and year of survey. The raw data is stored in `data/raw/`, while cleaned and processed versions used for the analysis are stored in `data/processed/`.
 ## Results
 
 <!-- Summary of key findings. -->
