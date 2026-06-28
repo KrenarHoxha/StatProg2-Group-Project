@@ -1,10 +1,7 @@
-Dataset: [Dataset name]
-Source:  [URL]
-Licence: [e.g. Creative Commons Attribution 4.0 International (CC BY 4.0)]
-         [Licence URL]
+Dataset: [Global Jobs Indicators Database]
+Source:  [https://datacatalog.worldbank.org/search/dataset/0037526/global-jobs-indicators-database]
+Licence: [Creative Commons Attribution 4.0]
+         [https://datacatalog.worldbank.org/public-licenses?fragment=cc]
 
-Downloaded: [YYYY-MM-DD]
-Downloaded by: [Name]
-
-Notes:
-  [Any restrictions, attribution requirements, or caveats]
+Downloaded: [28.06.2026]
+Downloaded by: [Daniel Kling]
