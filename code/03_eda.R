@@ -7,6 +7,20 @@ library(here)
 
 jobs <- read_csv(here("data", "processed", "jobs_clean.csv"), show_col_types = FALSE)
 
+jobs <- jobs |>
+  mutate(
+    income_level = factor(
+      income_level,
+      levels = c(
+        "Low income",
+        "Lower middle income",
+        "Upper middle income",
+        "High income"
+      ),
+      ordered = TRUE
+    )
+  )
+
 required_cols <- c(
   "country",
   "region",
