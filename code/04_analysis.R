@@ -5,6 +5,8 @@ library(tidyverse)
 library(here)
 library(broom)
 
+source(here("code", "utils.R"))
+
 jobs <- read_csv(here("data", "processed", "jobs_clean.csv"), show_col_types = FALSE)
 
 required_cols <- c(
@@ -19,10 +21,7 @@ required_cols <- c(
   "avg_weekly_hours"
 )
 
-missing_cols <- setdiff(required_cols, names(jobs))
-if (length(missing_cols) > 0) {
-  stop("Missing required columns: ", paste(missing_cols, collapse = ", "))
-}
+check_required_columns(jobs, required_cols)
 
 flfp_by_year_income <- jobs |>
   group_by(year, income_level) |>

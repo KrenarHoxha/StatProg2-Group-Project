@@ -165,7 +165,7 @@ model_coefficients |>
   )
 ```
 
-The model results describe conditional associations after accounting for the included labour market indicators, income group, and subsample. The coefficients are consistent with an exploratory relationship between female labor force participation and the selected labour market context variables. Because the model is not causal, the estimates should be read as descriptive patterns in the cleaned dataset.
+In the exploratory model, `unemployment`, `female_non_agri`, and `avg_weekly_hours` all have negative coefficients, conditional on the other included variables. The negative coefficients for `unemployment` and `avg_weekly_hours` are consistent with the pairwise correlations reported above, while the coefficient for `female_non_agri` is more negative than its weak pairwise correlation. Differences between correlation and regression patterns can occur because the model conditions on income group, subsample, and the other labour market indicators. The estimates describe conditional associations only and should not be interpreted causally.
 
 ## Limitations
 
