@@ -172,11 +172,15 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="data">Data</h2>
 <p>The project uses the Global Jobs Indicators Database, which contains country-level labour market indicators from multiple years. The dataset includes information on countries, regions, income groups, survey years, labour force participation, unemployment, employment by sector, and working hours.</p>
 <p>For this project, we focus mainly on female labor force participation among people aged 15–64. We also use selected variables such as unemployment rate, female employment in non-agricultural sectors, average weekly working hours, income group, country, region, and year of survey. The raw data is stored in <code>data/raw/</code>, while cleaned and processed versions used for the analysis are stored in <code>data/processed/</code>. ## Results</p>
-<!-- Summary of key findings. -->
+<p>The analysis shows that female labor force participation varies across income groups, population subsamples, and survey years. The grouped summaries indicate clear differences between income categories, but also substantial variation within each group. This suggests that income level alone does not fully explain participation patterns.</p>
+<p>The exploratory correlations show that unemployment and average weekly working hours are negatively associated with female labor force participation in the available data. Female non-agricultural employment shows a weaker association. The regression model supports the conclusion that female labor force participation is related to several labour market context variables even after accounting for income group and subsample.</p>
+<p>These results describe patterns in the cleaned dataset. They should not be interpreted as causal effects.</p>
 </section>
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
-<!-- Interpret results, limitations, and next steps. -->
+<p>The findings suggest that female labor force participation is shaped by a combination of economic context, labour market conditions, and population characteristics. Differences across income groups and subsamples highlight the importance of comparing countries and populations within their broader context rather than relying on a single global average.</p>
+<p>The analysis has several limitations. Survey coverage differs across countries and years, which restricts direct comparisons over time. The dataset also does not fully capture important influences such as childcare systems, education, legal institutions, social norms, sectoral labour demand, and family policies. As a result, the observed correlations and regression coefficients provide exploratory evidence rather than explanations of why participation rates differ.</p>
+<p>Future work could include richer contextual variables, clearer country-level comparisons, and more detailed model diagnostics. The full analysis, tables, and model results are available in the project report.</p>
 
 
 </section>
