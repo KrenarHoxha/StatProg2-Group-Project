@@ -32,6 +32,7 @@ code/
   02_clean.R     clean raw data and create jobs_clean.csv
   03_eda.R       create exploratory summaries and figures
   04_analysis.R  create main analysis outputs
+  utils.R        Shared helper functions for project scripts.
 
 data/
   raw/            raw Excel dataset and licence file
