@@ -23,12 +23,13 @@ Key variables for our initial analysis are renamed in the cleaned dataset as fol
 * `female_non_agri`: Female employment in non-agricultural sectors, aged 15–64
 * `avg_weekly_hours`: Average weekly working hours
 
+The raw import contained 14,628 rows. After removing 1,934 observations with missing female labor force participation, excluding no additional rows with missing survey year, and restricting the sample to surveys from 1990 onward, 12,357 rows remained; this removed 2,271 rows in total. Because `flfp` is the main outcome variable, rows without this value could not contribute to the analysis. The year restriction focuses the project on more recent labour market patterns and reduces sparse coverage in earlier periods. Missingness may not be random, so the results should be interpreted as applying to the retained observations.
+
 ## Research Questions
 
-1. **How does female labor force participation vary across some countries, income groups, urban/rural populations, over time?**
+1. **How does female labor force participation vary across income groups, urban/rural populations, and survey years?**
 
-2. **How is female labor force participation associated with unemployment, female non-agricultural employment,
-and average weekly working hours?**
+2. **How is female labor force participation associated with unemployment, female non-agricultural employment, and average weekly working hours?**
 
 ## Initial EDA
 

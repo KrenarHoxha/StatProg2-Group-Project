@@ -48,6 +48,8 @@ The project uses the World Bank **Global Jobs Indicators Database**, which conta
 
 The main outcome is female labor force participation among people aged 15-64 (`flfp`). The analysis also uses income level, subsample, survey year, unemployment, female non-agricultural employment, and average weekly working hours.
 
+The raw import contained 14,628 rows. After removing 1,934 observations with missing female labor force participation, excluding no additional rows with missing survey year, and restricting the sample to surveys from 1990 onward, 12,357 rows remained; this removed 2,271 rows in total. Because `flfp` is the main outcome variable, rows without this value could not contribute to the analysis. The year restriction focuses the project on more recent labour market patterns and reduces sparse coverage in earlier periods. Missingness may not be random, so the results should be interpreted as applying to the retained observations.
+
 ```{r}
 #| label: data-overview-table
 
