@@ -17,6 +17,7 @@ Our analysis focuses on two main questions: first, how female labor force partic
 The project uses the Global Jobs Indicators Database, which contains country-level labour market indicators from multiple years. The dataset includes information on countries, regions, income groups, survey years, labour force participation, unemployment, employment by sector, and working hours.
 
 For this project, we focus mainly on female labor force participation among people aged 15–64. We also use selected variables such as unemployment rate, female employment in non-agricultural sectors, average weekly working hours, income group, country, region, and year of survey. The raw data is stored in `data/raw/`, while cleaned and processed versions used for the analysis are stored in `data/processed/`.
+
 ## Results
 
 The analysis shows that female labor force participation varies across income groups, population subsamples, and survey years. The grouped summaries indicate clear differences between income categories, but also substantial variation within each group. This suggests that income level alone does not fully explain participation patterns.

@@ -13,6 +13,12 @@ and average weekly working hours?
 - **Licence:** Creative Commons Attribution 4.0
 - **Description:** The Global Jobs Indicators Database, JOIN, presents more than 100 labor market indicators for 168 countries and 1,802 surveys. The indicators cover socio-demographics, labor force status, employment type, employment composition by sector and occupation, education level completed, hours worked, earnings, and also provide information on survey quality. The indicators are nationally representative and available for different types of workers. This includes workers in urban or rural areas, men and women, younger (age 15-24) and older (age 25-64) workers, or workers with lower and higher education.
 
+One row in the cleaned dataset represents one country, survey year, and subsample observation. In the current cleaned data, the combination of `country`, `year`, and `subsample` uniquely identifies rows; `region` and `income_level` describe the country context for that observation.
+
+The `subsample` variable distinguishes the population group used for each indicator. The observed categories are `All`, `Female`, `High Education`, `Low Education`, `Old`, `Rural`, `Urban`, and `Young`. This variable is central to the first research question because it allows comparisons between urban and rural populations as well as other population groups.
+
+We restrict the analysis to surveys from 1990 onward to focus on more recent labour market patterns, improve comparability, and reduce sparse coverage in earlier years.
+
 ## Group Members
 |       Name         | GitHub username |
 |--------------------|-----------------|
