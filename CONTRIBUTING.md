@@ -31,4 +31,4 @@ We used the following AI tools in this project:
 | ChatGPT | Debugging and technical support       | Used as support for Quarto rendering, YAML formatting, GitHub Pages, `renv`, and package installation issues. |
 | ChatGPT | Wording and explanation support       | Used to improve explanations, commit messages, repository descriptions, and reflection text.                  |
 
-All AI-generated code and text was reviewed, adapted, and verified by a group member before inclusion. The actual data cleaning, code execution, analysis decisions, interpretation, and final project content were completed by the group members.
+All AI-generated code and text was reviewed, adapted, and verified by a group member before inclusion.
