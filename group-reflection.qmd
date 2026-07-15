@@ -1,0 +1,220 @@
+---
+title: "Group Reflection"
+editor: visual
+---
+
+## Skills inventory
+
+For each skill area, we describe how we used the skill in our project on female labor force participation using the World Bank Global Jobs Indicators Database.
+
+### Functions & refactoring (W2)
+
+*What we did:*
+
+We used separate R scripts for different parts of the workflow: data preparation, cleaning, exploratory data analysis, and analysis. We also added a helper function in `utils.R` to check whether required columns are available before running parts of the analysis.
+
+*What worked well:*
+
+Splitting the work into separate scripts made the project easier to understand and rerun. The helper function reduced repeated code and made the analysis script less error-prone.
+
+*What was hard:*
+
+At first, some checks and transformations were repeated manually in different scripts. It took some time to notice which parts should be refactored into a reusable function.
+
+### Debugging (W3)
+
+*What we did:*
+
+We debugged practical issues such as incorrect column names after importing the Excel file, missing R packages, YAML formatting errors in Quarto files, and rendering problems.
+
+*What worked well:*
+
+Running chunks step by step helped us identify where errors occurred. Checking column names with `names()` and inspecting data with `glimpse()` helped us verify that the data was imported correctly.
+
+*What was hard:*
+
+Some errors were caused by the project environment rather than the analysis code itself. For example, package installation and `renv` issues required us to understand the difference between R package errors and system-level dependency problems.
+
+### Version control & remotes (W4)
+
+*What we did:*
+
+We used Git and GitHub to track changes to the project. The repository contains the Quarto files, analysis scripts, processed data, figures, and rendered website output.
+
+*What worked well:*
+
+Git made it possible to track changes and connect feedback to concrete commits. The commit history also helped us reconstruct who worked on which parts of the project.
+
+*What was hard:*
+
+At first, it was not always clear which generated files should be committed, especially files in `docs/` after rendering the website.
+
+### Quarto websites & collaborative coding (W5)
+
+*What we did:*
+
+We used Quarto to create the project proposal, report, reflection page, and rendered website. The website is published through GitHub Pages using the `docs/` folder.
+
+*What worked well:*
+
+Quarto allowed us to combine text, code, tables, and figures in one reproducible project website.
+
+*What was hard:*
+
+Small YAML formatting mistakes caused rendering errors. We also had to understand the difference between the source `.qmd` files and the rendered website pages.
+
+### R packages (W6)
+
+*What we did:*
+
+We used packages such as `tidyverse`, `readxl`, `here`, `broom`, and `gt`. These supported data import, cleaning, plotting, modelling, and table formatting.
+
+*What worked well:*
+
+The tidyverse workflow made the data cleaning and analysis readable. Functions like `select()`, `mutate()`, `filter()`, `group_by()`, and `summarise()` were especially useful.
+
+*What was hard:*
+
+Some packages were not installed automatically for every group member. This showed us why reproducible package management is important.
+
+### Initial data analysis & data cleaning (W7)
+
+*What we did:*
+
+We inspected the raw dataset, selected variables relevant to female labor force participation, checked missing values, and created first visualisations.
+
+*What worked well:*
+
+The initial EDA helped us understand which variables were useful and which had many missing values. It also showed that female labor force participation differs strongly across income groups and subsamples.
+
+*What was hard:*
+
+The dataset contains many variables and several different subsample categories. We had to be careful not to compare groups without explaining what they represent.
+
+### Reproducibility, open data & renv (W9)
+
+*What we did:*
+
+We used an open dataset from the World Bank and stored cleaned analysis data in `data/processed/`. We used `renv` to manage package versions.
+
+*What worked well:*
+
+Using scripts made it possible to rerun the workflow from raw data to processed outputs. The `here()` package helped avoid hard-coded local paths.
+
+*What was hard:*
+
+Keeping `renv` in sync was sometimes confusing. We had to distinguish between installing packages locally, updating the lockfile with `renv::snapshot()`, and restoring the environment with `renv::restore()`.
+
+### Analysis & inference strategies (W10)
+
+*What we did:*
+
+Our analysis is exploratory and descriptive. We used grouped summaries, plots, correlations, and a simple linear regression model with female labor force participation as the outcome variable.
+
+*What worked well:*
+
+The combination of visualisations and a simple model helped us describe patterns in the data while keeping the analysis understandable.
+
+*What was hard:*
+
+It was important not to overinterpret the regression model. The data is observational and does not include many social, cultural, institutional, or policy factors, so we avoided causal claims.
+
+### Communication & visualisation (W11)
+
+*What we did:*
+
+We created figures for the report and website, including a boxplot by income group, a time-series plot, and a scatterplot with unemployment. We also wrote short explanations below the figures.
+
+*What worked well:*
+
+The visualisations made the main patterns easier to communicate. Ordering income groups from low income to high income improved readability.
+
+*What was hard:*
+
+Some plots were initially difficult to interpret because the dataset includes many countries, years, and subsamples. We had to keep our explanations cautious.
+
+## Key analytical decisions
+
+### Decision 1: Focusing on female labor force participation
+
+*What were we deciding between?*
+
+We first considered different labour market topics, including youth unemployment and general unemployment patterns. We eventually chose female labor force participation as the main outcome.
+
+*How did we reason through it?*
+
+Female labor force participation gave us a clear outcome variable and allowed us to connect descriptive, exploratory, and model-based analysis.
+
+*In hindsight, would we decide differently?*
+
+No. The topic worked well with the available data, but we would define the final scope earlier next time.
+
+### Decision 2: Cleaning and restricting the analysis data
+
+*What were we deciding between?*
+
+We had to decide whether to use all available observations or restrict the dataset to observations with usable female labor force participation values and a more interpretable time range.
+
+*How did we reason through it?*
+
+Since female labor force participation is our main outcome, observations with missing `flfp` could not be used for the main analysis. We also considered the time coverage because early years had fewer observations.
+
+*In hindsight, would we decide differently?*
+
+The decision was reasonable. In a future project, we would document cleaning decisions even earlier.
+
+### Decision 3: Treating the model as exploratory
+
+*What were we deciding between?*
+
+We had to decide whether to present the regression model as explanatory or exploratory.
+
+*How did we reason through it?*
+
+The dataset is observational and does not include many important contextual variables such as childcare policies, social norms, legal institutions, or cultural factors. Therefore, causal interpretation would not be justified.
+
+*In hindsight, would we decide differently?*
+
+No. It was better to present the model cautiously as an exploratory association model.
+
+## Workflow & collaboration
+
+*How did we divide work across group members?*
+
+The project was originally planned with four group members, but two members left the group before the updated proposal stage. The remaining work was completed by Krenar Hoxha and Daniel Kling. Work was divided between initial EDA, data cleaning, analysis scripts, report writing, website rendering, and final polishing.
+
+*What branching or Git workflow did we actually use — and did it match the proposal?*
+
+We used GitHub as the central repository and committed changes regularly. In practice, our workflow was simpler than a full feature-branch workflow. Most work was integrated directly into the main repository with descriptive commits.
+
+*What would we change about how we coordinated?*
+
+We would define responsibilities and GitHub issues earlier. This would make it easier to track tasks and document contributions throughout the project.
+
+## LLM usage
+
+We used ChatGPT as a support tool during the project, mainly for brainstorming, debugging, and improving explanations. The actual data cleaning, analysis, code execution, interpretation, and final project decisions were done by the group members.
+
+### Usage 1: Brainstorming and narrowing the topic
+
+- **Tool / model:** ChatGPT
+
+- **What it helped with:** We used it to discuss possible research directions within the World Bank Global Jobs Indicators Database.
+
+- **What we had to correct or verify:** We checked ourselves whether the suggested variables actually existed in the dataset and whether the research questions were realistic.
+
+### Usage 2: Debugging and technical support
+
+- **Tool / model:** ChatGPT
+
+- **What it helped with:** We used it for support with Quarto rendering, YAML formatting, GitHub Pages, package installation, and `renv`.
+
+- **What we had to correct or verify:** We tested all suggestions locally by rerunning the code, rendering the website, and checking the output files.
+
+### Usage 3: Wording and explanation support
+
+- **Tool / model:** ChatGPT
+
+- **What it helped with:** We used it to improve wording for explanations, commit messages, repository descriptions, and reflection text.
+
+- **What we had to correct or verify:** We adjusted the text to match our actual analysis, results, and project decisions.

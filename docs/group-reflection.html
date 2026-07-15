@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>contributing – StatProg2 Group Project</title>
+<title>Group Reflection – StatProg2 Group Project</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-85ee6fa7f4150c29be0325b263c6ab25.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Report</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./group-reflection.html"> 
+    <a class="nav-link active" href="./group-reflection.html" aria-current="page"> 
 <span class="menu-text">Reflection</span></a>
   </li>  
 </ul>
@@ -123,51 +123,206 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#contributions" id="toc-contributions" class="nav-link active" data-scroll-target="#contributions">Contributions</a>
+  <li><a href="#skills-inventory" id="toc-skills-inventory" class="nav-link active" data-scroll-target="#skills-inventory">Skills inventory</a>
   <ul class="collapse">
-  <li><a href="#group-members" id="toc-group-members" class="nav-link" data-scroll-target="#group-members">Group Members</a></li>
-  <li><a href="#ai-tool-disclosure" id="toc-ai-tool-disclosure" class="nav-link" data-scroll-target="#ai-tool-disclosure">AI Tool Disclosure</a></li>
+  <li><a href="#functions-refactoring-w2" id="toc-functions-refactoring-w2" class="nav-link" data-scroll-target="#functions-refactoring-w2">Functions &amp; refactoring (W2)</a></li>
+  <li><a href="#debugging-w3" id="toc-debugging-w3" class="nav-link" data-scroll-target="#debugging-w3">Debugging (W3)</a></li>
+  <li><a href="#version-control-remotes-w4" id="toc-version-control-remotes-w4" class="nav-link" data-scroll-target="#version-control-remotes-w4">Version control &amp; remotes (W4)</a></li>
+  <li><a href="#quarto-websites-collaborative-coding-w5" id="toc-quarto-websites-collaborative-coding-w5" class="nav-link" data-scroll-target="#quarto-websites-collaborative-coding-w5">Quarto websites &amp; collaborative coding (W5)</a></li>
+  <li><a href="#r-packages-w6" id="toc-r-packages-w6" class="nav-link" data-scroll-target="#r-packages-w6">R packages (W6)</a></li>
+  <li><a href="#initial-data-analysis-data-cleaning-w7" id="toc-initial-data-analysis-data-cleaning-w7" class="nav-link" data-scroll-target="#initial-data-analysis-data-cleaning-w7">Initial data analysis &amp; data cleaning (W7)</a></li>
+  <li><a href="#reproducibility-open-data-renv-w9" id="toc-reproducibility-open-data-renv-w9" class="nav-link" data-scroll-target="#reproducibility-open-data-renv-w9">Reproducibility, open data &amp; renv (W9)</a></li>
+  <li><a href="#analysis-inference-strategies-w10" id="toc-analysis-inference-strategies-w10" class="nav-link" data-scroll-target="#analysis-inference-strategies-w10">Analysis &amp; inference strategies (W10)</a></li>
+  <li><a href="#communication-visualisation-w11" id="toc-communication-visualisation-w11" class="nav-link" data-scroll-target="#communication-visualisation-w11">Communication &amp; visualisation (W11)</a></li>
+  </ul></li>
+  <li><a href="#key-analytical-decisions" id="toc-key-analytical-decisions" class="nav-link" data-scroll-target="#key-analytical-decisions">Key analytical decisions</a>
+  <ul class="collapse">
+  <li><a href="#decision-1-focusing-on-female-labor-force-participation" id="toc-decision-1-focusing-on-female-labor-force-participation" class="nav-link" data-scroll-target="#decision-1-focusing-on-female-labor-force-participation">Decision 1: Focusing on female labor force participation</a></li>
+  <li><a href="#decision-2-cleaning-and-restricting-the-analysis-data" id="toc-decision-2-cleaning-and-restricting-the-analysis-data" class="nav-link" data-scroll-target="#decision-2-cleaning-and-restricting-the-analysis-data">Decision 2: Cleaning and restricting the analysis data</a></li>
+  <li><a href="#decision-3-treating-the-model-as-exploratory" id="toc-decision-3-treating-the-model-as-exploratory" class="nav-link" data-scroll-target="#decision-3-treating-the-model-as-exploratory">Decision 3: Treating the model as exploratory</a></li>
+  </ul></li>
+  <li><a href="#workflow-collaboration" id="toc-workflow-collaboration" class="nav-link" data-scroll-target="#workflow-collaboration">Workflow &amp; collaboration</a></li>
+  <li><a href="#llm-usage" id="toc-llm-usage" class="nav-link" data-scroll-target="#llm-usage">LLM usage</a>
+  <ul class="collapse">
+  <li><a href="#usage-1-brainstorming-and-narrowing-the-topic" id="toc-usage-1-brainstorming-and-narrowing-the-topic" class="nav-link" data-scroll-target="#usage-1-brainstorming-and-narrowing-the-topic">Usage 1: Brainstorming and narrowing the topic</a></li>
+  <li><a href="#usage-2-debugging-and-technical-support" id="toc-usage-2-debugging-and-technical-support" class="nav-link" data-scroll-target="#usage-2-debugging-and-technical-support">Usage 2: Debugging and technical support</a></li>
+  <li><a href="#usage-3-wording-and-explanation-support" id="toc-usage-3-wording-and-explanation-support" class="nav-link" data-scroll-target="#usage-3-wording-and-explanation-support">Usage 3: Wording and explanation support</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Group Reflection</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="contributions" class="level1">
-<h1>Contributions</h1>
-<section id="group-members" class="level2">
-<h2 class="anchored" data-anchor-id="group-members">Group Members</h2>
-<!-- Fill in after the project is complete. -->
-<p><strong>[Name]</strong> — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]</p>
-<p><strong>[Name]</strong> — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]</p>
-<p><strong>[Name]</strong> — [files/sections responsible for] - [Key task 1] - [Key task 2] - [Collaborative tasks]</p>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="skills-inventory" class="level2">
+<h2 class="anchored" data-anchor-id="skills-inventory">Skills inventory</h2>
+<p>For each skill area, we describe how we used the skill in our project on female labor force participation using the World Bank Global Jobs Indicators Database.</p>
+<section id="functions-refactoring-w2" class="level3">
+<h3 class="anchored" data-anchor-id="functions-refactoring-w2">Functions &amp; refactoring (W2)</h3>
+<p><em>What we did:</em></p>
+<p>We used separate R scripts for different parts of the workflow: data preparation, cleaning, exploratory data analysis, and analysis. We also added a helper function in <code>utils.R</code> to check whether required columns are available before running parts of the analysis.</p>
+<p><em>What worked well:</em></p>
+<p>Splitting the work into separate scripts made the project easier to understand and rerun. The helper function reduced repeated code and made the analysis script less error-prone.</p>
+<p><em>What was hard:</em></p>
+<p>At first, some checks and transformations were repeated manually in different scripts. It took some time to notice which parts should be refactored into a reusable function.</p>
 </section>
-<section id="ai-tool-disclosure" class="level2">
-<h2 class="anchored" data-anchor-id="ai-tool-disclosure">AI Tool Disclosure</h2>
-<!-- Complete per the department guidelines:
-     https://docs.google.com/document/d/1mQ5YAWKDt9Ax4LvK-wuUzO5XfCI0e-ZGdk49ghb08Ds -->
-<p>We used the following AI tools in this project:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Tool</th>
-<th>Purpose</th>
-<th>Scope</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>All AI-generated code and text was reviewed and verified by a group member before inclusion.</p>
+<section id="debugging-w3" class="level3">
+<h3 class="anchored" data-anchor-id="debugging-w3">Debugging (W3)</h3>
+<p><em>What we did:</em></p>
+<p>We debugged practical issues such as incorrect column names after importing the Excel file, missing R packages, YAML formatting errors in Quarto files, and rendering problems.</p>
+<p><em>What worked well:</em></p>
+<p>Running chunks step by step helped us identify where errors occurred. Checking column names with <code>names()</code> and inspecting data with <code>glimpse()</code> helped us verify that the data was imported correctly.</p>
+<p><em>What was hard:</em></p>
+<p>Some errors were caused by the project environment rather than the analysis code itself. For example, package installation and <code>renv</code> issues required us to understand the difference between R package errors and system-level dependency problems.</p>
+</section>
+<section id="version-control-remotes-w4" class="level3">
+<h3 class="anchored" data-anchor-id="version-control-remotes-w4">Version control &amp; remotes (W4)</h3>
+<p><em>What we did:</em></p>
+<p>We used Git and GitHub to track changes to the project. The repository contains the Quarto files, analysis scripts, processed data, figures, and rendered website output.</p>
+<p><em>What worked well:</em></p>
+<p>Git made it possible to track changes and connect feedback to concrete commits. The commit history also helped us reconstruct who worked on which parts of the project.</p>
+<p><em>What was hard:</em></p>
+<p>At first, it was not always clear which generated files should be committed, especially files in <code>docs/</code> after rendering the website.</p>
+</section>
+<section id="quarto-websites-collaborative-coding-w5" class="level3">
+<h3 class="anchored" data-anchor-id="quarto-websites-collaborative-coding-w5">Quarto websites &amp; collaborative coding (W5)</h3>
+<p><em>What we did:</em></p>
+<p>We used Quarto to create the project proposal, report, reflection page, and rendered website. The website is published through GitHub Pages using the <code>docs/</code> folder.</p>
+<p><em>What worked well:</em></p>
+<p>Quarto allowed us to combine text, code, tables, and figures in one reproducible project website.</p>
+<p><em>What was hard:</em></p>
+<p>Small YAML formatting mistakes caused rendering errors. We also had to understand the difference between the source <code>.qmd</code> files and the rendered website pages.</p>
+</section>
+<section id="r-packages-w6" class="level3">
+<h3 class="anchored" data-anchor-id="r-packages-w6">R packages (W6)</h3>
+<p><em>What we did:</em></p>
+<p>We used packages such as <code>tidyverse</code>, <code>readxl</code>, <code>here</code>, <code>broom</code>, and <code>gt</code>. These supported data import, cleaning, plotting, modelling, and table formatting.</p>
+<p><em>What worked well:</em></p>
+<p>The tidyverse workflow made the data cleaning and analysis readable. Functions like <code>select()</code>, <code>mutate()</code>, <code>filter()</code>, <code>group_by()</code>, and <code>summarise()</code> were especially useful.</p>
+<p><em>What was hard:</em></p>
+<p>Some packages were not installed automatically for every group member. This showed us why reproducible package management is important.</p>
+</section>
+<section id="initial-data-analysis-data-cleaning-w7" class="level3">
+<h3 class="anchored" data-anchor-id="initial-data-analysis-data-cleaning-w7">Initial data analysis &amp; data cleaning (W7)</h3>
+<p><em>What we did:</em></p>
+<p>We inspected the raw dataset, selected variables relevant to female labor force participation, checked missing values, and created first visualisations.</p>
+<p><em>What worked well:</em></p>
+<p>The initial EDA helped us understand which variables were useful and which had many missing values. It also showed that female labor force participation differs strongly across income groups and subsamples.</p>
+<p><em>What was hard:</em></p>
+<p>The dataset contains many variables and several different subsample categories. We had to be careful not to compare groups without explaining what they represent.</p>
+</section>
+<section id="reproducibility-open-data-renv-w9" class="level3">
+<h3 class="anchored" data-anchor-id="reproducibility-open-data-renv-w9">Reproducibility, open data &amp; renv (W9)</h3>
+<p><em>What we did:</em></p>
+<p>We used an open dataset from the World Bank and stored cleaned analysis data in <code>data/processed/</code>. We used <code>renv</code> to manage package versions.</p>
+<p><em>What worked well:</em></p>
+<p>Using scripts made it possible to rerun the workflow from raw data to processed outputs. The <code>here()</code> package helped avoid hard-coded local paths.</p>
+<p><em>What was hard:</em></p>
+<p>Keeping <code>renv</code> in sync was sometimes confusing. We had to distinguish between installing packages locally, updating the lockfile with <code>renv::snapshot()</code>, and restoring the environment with <code>renv::restore()</code>.</p>
+</section>
+<section id="analysis-inference-strategies-w10" class="level3">
+<h3 class="anchored" data-anchor-id="analysis-inference-strategies-w10">Analysis &amp; inference strategies (W10)</h3>
+<p><em>What we did:</em></p>
+<p>Our analysis is exploratory and descriptive. We used grouped summaries, plots, correlations, and a simple linear regression model with female labor force participation as the outcome variable.</p>
+<p><em>What worked well:</em></p>
+<p>The combination of visualisations and a simple model helped us describe patterns in the data while keeping the analysis understandable.</p>
+<p><em>What was hard:</em></p>
+<p>It was important not to overinterpret the regression model. The data is observational and does not include many social, cultural, institutional, or policy factors, so we avoided causal claims.</p>
+</section>
+<section id="communication-visualisation-w11" class="level3">
+<h3 class="anchored" data-anchor-id="communication-visualisation-w11">Communication &amp; visualisation (W11)</h3>
+<p><em>What we did:</em></p>
+<p>We created figures for the report and website, including a boxplot by income group, a time-series plot, and a scatterplot with unemployment. We also wrote short explanations below the figures.</p>
+<p><em>What worked well:</em></p>
+<p>The visualisations made the main patterns easier to communicate. Ordering income groups from low income to high income improved readability.</p>
+<p><em>What was hard:</em></p>
+<p>Some plots were initially difficult to interpret because the dataset includes many countries, years, and subsamples. We had to keep our explanations cautious.</p>
+</section>
+</section>
+<section id="key-analytical-decisions" class="level2">
+<h2 class="anchored" data-anchor-id="key-analytical-decisions">Key analytical decisions</h2>
+<section id="decision-1-focusing-on-female-labor-force-participation" class="level3">
+<h3 class="anchored" data-anchor-id="decision-1-focusing-on-female-labor-force-participation">Decision 1: Focusing on female labor force participation</h3>
+<p><em>What were we deciding between?</em></p>
+<p>We first considered different labour market topics, including youth unemployment and general unemployment patterns. We eventually chose female labor force participation as the main outcome.</p>
+<p><em>How did we reason through it?</em></p>
+<p>Female labor force participation gave us a clear outcome variable and allowed us to connect descriptive, exploratory, and model-based analysis.</p>
+<p><em>In hindsight, would we decide differently?</em></p>
+<p>No.&nbsp;The topic worked well with the available data, but we would define the final scope earlier next time.</p>
+</section>
+<section id="decision-2-cleaning-and-restricting-the-analysis-data" class="level3">
+<h3 class="anchored" data-anchor-id="decision-2-cleaning-and-restricting-the-analysis-data">Decision 2: Cleaning and restricting the analysis data</h3>
+<p><em>What were we deciding between?</em></p>
+<p>We had to decide whether to use all available observations or restrict the dataset to observations with usable female labor force participation values and a more interpretable time range.</p>
+<p><em>How did we reason through it?</em></p>
+<p>Since female labor force participation is our main outcome, observations with missing <code>flfp</code> could not be used for the main analysis. We also considered the time coverage because early years had fewer observations.</p>
+<p><em>In hindsight, would we decide differently?</em></p>
+<p>The decision was reasonable. In a future project, we would document cleaning decisions even earlier.</p>
+</section>
+<section id="decision-3-treating-the-model-as-exploratory" class="level3">
+<h3 class="anchored" data-anchor-id="decision-3-treating-the-model-as-exploratory">Decision 3: Treating the model as exploratory</h3>
+<p><em>What were we deciding between?</em></p>
+<p>We had to decide whether to present the regression model as explanatory or exploratory.</p>
+<p><em>How did we reason through it?</em></p>
+<p>The dataset is observational and does not include many important contextual variables such as childcare policies, social norms, legal institutions, or cultural factors. Therefore, causal interpretation would not be justified.</p>
+<p><em>In hindsight, would we decide differently?</em></p>
+<p>No.&nbsp;It was better to present the model cautiously as an exploratory association model.</p>
+</section>
+</section>
+<section id="workflow-collaboration" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-collaboration">Workflow &amp; collaboration</h2>
+<p><em>How did we divide work across group members?</em></p>
+<p>The project was originally planned with four group members, but two members left the group before the updated proposal stage. The remaining work was completed by Krenar Hoxha and Daniel Kling. Work was divided between initial EDA, data cleaning, analysis scripts, report writing, website rendering, and final polishing.</p>
+<p><em>What branching or Git workflow did we actually use — and did it match the proposal?</em></p>
+<p>We used GitHub as the central repository and committed changes regularly. In practice, our workflow was simpler than a full feature-branch workflow. Most work was integrated directly into the main repository with descriptive commits.</p>
+<p><em>What would we change about how we coordinated?</em></p>
+<p>We would define responsibilities and GitHub issues earlier. This would make it easier to track tasks and document contributions throughout the project.</p>
+</section>
+<section id="llm-usage" class="level2">
+<h2 class="anchored" data-anchor-id="llm-usage">LLM usage</h2>
+<p>We used ChatGPT as a support tool during the project, mainly for brainstorming, debugging, and improving explanations. The actual data cleaning, analysis, code execution, interpretation, and final project decisions were done by the group members.</p>
+<section id="usage-1-brainstorming-and-narrowing-the-topic" class="level3">
+<h3 class="anchored" data-anchor-id="usage-1-brainstorming-and-narrowing-the-topic">Usage 1: Brainstorming and narrowing the topic</h3>
+<ul>
+<li><p><strong>Tool / model:</strong> ChatGPT</p></li>
+<li><p><strong>What it helped with:</strong> We used it to discuss possible research directions within the World Bank Global Jobs Indicators Database.</p></li>
+<li><p><strong>What we had to correct or verify:</strong> We checked ourselves whether the suggested variables actually existed in the dataset and whether the research questions were realistic.</p></li>
+</ul>
+</section>
+<section id="usage-2-debugging-and-technical-support" class="level3">
+<h3 class="anchored" data-anchor-id="usage-2-debugging-and-technical-support">Usage 2: Debugging and technical support</h3>
+<ul>
+<li><p><strong>Tool / model:</strong> ChatGPT</p></li>
+<li><p><strong>What it helped with:</strong> We used it for support with Quarto rendering, YAML formatting, GitHub Pages, package installation, and <code>renv</code>.</p></li>
+<li><p><strong>What we had to correct or verify:</strong> We tested all suggestions locally by rerunning the code, rendering the website, and checking the output files.</p></li>
+</ul>
+</section>
+<section id="usage-3-wording-and-explanation-support" class="level3">
+<h3 class="anchored" data-anchor-id="usage-3-wording-and-explanation-support">Usage 3: Wording and explanation support</h3>
+<ul>
+<li><p><strong>Tool / model:</strong> ChatGPT</p></li>
+<li><p><strong>What it helped with:</strong> We used it to improve wording for explanations, commit messages, repository descriptions, and reflection text.</p></li>
+<li><p><strong>What we had to correct or verify:</strong> We adjusted the text to match our actual analysis, results, and project decisions.</p></li>
+</ul>
 
 
 </section>
