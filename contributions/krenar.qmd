@@ -1,0 +1,12 @@
+---
+title: "Krenar Hoxha — Contribution Statement"
+format: html
+---
+
+**Primarily responsible for:** initial exploratory data analysis, proposal updates, FLFP visualisation improvements, Quarto website rendering and submission support
+
+- Created the initial exploratory data analysis for the proposal, including selecting relevant variables, checking missing values, calculating summary statistics, and creating first visualisations for female labor force participation.
+- Improved the female labor force participation income-group plot by ordering the income groups from low income to high income, making the visualisation easier to interpret.
+- Helped prepare the rendered Quarto website for submission, including checking GitHub Pages links, adding the group reflection page to the website, and re-rendering the final site.
+
+**Collaborative tasks:** research question development, topic selection, interpretation of EDA plots, checking the rendered proposal/report, final website review, and discussion of project limitations and LLM usage.
