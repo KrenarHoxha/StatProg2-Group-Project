@@ -1,0 +1,15 @@
+---
+title: "Daniel Kling (idxny) — Contribution Statement"
+format: html
+---
+
+**Primarily responsible for:** reproducible project setup, data download and cleaning pipeline fixes, initial exploratory data analysis, proposal/report updates, final analysis integration, and Quarto website rendering support
+
+
+- Created and tested the reproducible project environment, including renv-related files and the initial Quarto website rendering workflow.
+- Improved the data pipeline by fixing the raw data download script and cleaning process so the analysis data could be regenerated more consistently.
+- Created and refined exploratory data analysis outputs for the proposal, including variable selection, missing-value checks, summary statistics, and first visualisations.
+- Added and updated analysis/report files, README and proposal content, and helped re-render the final website after project feedback and revisions.
+
+
+**Collaborative tasks:** research question development, topic selection, interpretation of EDA and analysis results, checking the rendered proposal/report, final website review, and discussion of project limitations and LLM usage.
